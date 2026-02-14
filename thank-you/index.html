@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're Booked — FundedList</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #0a0a0a;
+      color: #f5f5f5;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    nav {
+      padding: 20px 0;
+      border-bottom: 1px solid #2a2a2a;
+    }
+    nav .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      text-decoration: none;
+      color: #f5f5f5;
+    }
+    .logo span { color: #6366f1; }
+    .back-link {
+      color: #888;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .back-link:hover { color: #f5f5f5; }
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+    }
+    .thank-you {
+      max-width: 560px;
+      text-align: center;
+    }
+    .checkmark {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: rgba(34, 197, 94, 0.12);
+      border: 2px solid rgba(34, 197, 94, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      font-size: 2rem;
+    }
+    .thank-you h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+    }
+    .thank-you .subtitle {
+      color: #888;
+      font-size: 1rem;
+      margin-bottom: 40px;
+    }
+    .agenda {
+      background: #141414;
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
+      padding: 32px;
+      text-align: left;
+      margin-bottom: 36px;
+    }
+    .agenda h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #f5f5f5;
+    }
+    .agenda-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .agenda-item:last-child { margin-bottom: 0; }
+    .agenda-item .bullet {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: rgba(99, 102, 241, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: #6366f1;
+      font-weight: 700;
+      margin-top: 1px;
+    }
+    .agenda-item p {
+      color: #bbb;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .no-pressure {
+      color: #888;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+    .signature {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #f5f5f5;
+    }
+    .connect {
+      margin-top: 8px;
+    }
+    .connect a {
+      color: #6366f1;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .connect a:hover { color: #818cf8; }
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid #2a2a2a;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <a href="/" class="logo">Funded<span>List</span></a>
+      <a href="/" class="back-link">← Back to home</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="thank-you">
+      <div class="checkmark">✓</div>
+      <h1>You're in!</h1>
+      <p class="subtitle">Check your email for the calendar confirmation.</p>
+
+      <div class="agenda">
+        <h2>Here's what we'll cover in our 30 minutes:</h2>
+        <div class="agenda-item">
+          <div class="bullet">1</div>
+          <p>Your current pipeline — what's working, what's not, and where the gaps are</p>
+        </div>
+        <div class="agenda-item">
+          <div class="bullet">2</div>
+          <p>How the AI outbound system would work for your specific market</p>
+        </div>
+        <div class="agenda-item">
+          <div class="bullet">3</div>
+          <p>Whether it makes sense to work together — and if not, I'll point you in the right direction anyway</p>
+        </div>
+      </div>
+
+      <p class="no-pressure">No pressure. No slides. No 47-step funnel.<br>Just a real conversation.</p>
+
+      <div class="signature">
+        — Dhruv
+        <div class="connect">
+          <a href="https://www.linkedin.com/in/dhruvkar/" target="_blank">Connect on LinkedIn →</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 FundedList. Built in St. Louis. Powered by fruit and AI.</p>
+  </footer>
+
+</body>
+</html>
