@@ -130,6 +130,7 @@
     .logo-bar {
       padding: 36px 0;
       border-bottom: 1px solid var(--border);
+      overflow: hidden;
     }
     .logo-bar .trust-label {
       font-size: 0.75rem;
@@ -140,22 +141,26 @@
       text-align: center;
       margin-bottom: 24px;
     }
-    .logo-row {
+    .logo-marquee {
+      overflow: hidden;
+      max-width: 700px;
+      margin: 0 auto;
+      mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    }
+    .logo-track {
       display: flex;
-      justify-content: center;
       align-items: center;
-      gap: 40px;
-      flex-wrap: wrap;
+      white-space: nowrap;
     }
     .logo-item {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 10px;
-      white-space: nowrap;
+      padding: 0 28px;
       opacity: 0.5;
-      transition: opacity 0.3s;
+      flex-shrink: 0;
     }
-    .logo-item:hover { opacity: 0.9; }
     .logo-item img {
       height: 28px;
       width: 28px;
@@ -170,7 +175,7 @@
       letter-spacing: -0.2px;
     }
     @media (max-width: 768px) {
-      .logo-row { gap: 24px 32px; }
+      .logo-item { padding: 0 20px; }
       .logo-item img { height: 24px; width: 24px; }
       .logo-item span { font-size: 0.8rem; }
     }
@@ -342,10 +347,10 @@
     }
     .testimonial blockquote {
       font-size: 0.95rem;
-      line-height: 1.7;
-      color: var(--text);
+      line-height: 1.75;
+      color: #ccc;
       margin-bottom: 20px;
-      font-style: italic;
+      font-style: normal;
     }
     .testimonial .author {
       display: flex;
@@ -396,8 +401,9 @@
       border: 2px solid var(--accent-light);
     }
     .featured-testimonial blockquote {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       line-height: 1.8;
+      color: #ddd;
     }
     .featured-testimonial .author-info .name {
       font-size: 1.05rem;
@@ -476,11 +482,11 @@
   <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <div class="hero-badge">🤖 AI-Powered Lead Generation</div>
-      <h1>Stop guessing.<br>Start filling your pipeline <em>with AI.</em></h1>
-      <p>We build you a machine that finds your ideal customers, writes the outreach, and books the meetings. You just show up and close.</p>
+      <div class="hero-badge">🤖 AI-Powered Outbound</div>
+      <h1>I've helped 100+ companies find their next customers. <em>Now I'll show you how.</em></h1>
+      <p>Learn the exact AI system I use to find buyers, write outreach that lands, and fill your calendar — so you can run it yourself, forever.</p>
       <a href="#cta" class="hero-cta">
-        Get Your Pipeline Built
+        Book a Free Strategy Call
         <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
       </a>
     </div>
@@ -489,15 +495,25 @@
   <!-- LOGO BAR -->
   <section class="logo-bar">
     <div class="trust-label">Trusted by 100+ companies</div>
-    <div class="logo-row">
-      <div class="logo-item"><img src="img/logos/zendesk.jpg" alt="Zendesk"><span>Zendesk</span></div>
-      <div class="logo-item"><img src="img/logos/twilio.jpg" alt="Twilio Segment"><span>Twilio Segment</span></div>
-      <div class="logo-item"><img src="img/logos/freshworks.jpg" alt="Freshworks"><span>Freshworks</span></div>
-      <div class="logo-item"><img src="img/logos/dolby.jpg" alt="Dolby"><span>Dolby</span></div>
-      <div class="logo-item"><img src="img/logos/saastock.jpg" alt="SaaStock"><span>SaaStock</span></div>
-      <div class="logo-item"><img src="img/logos/foundersuite.jpg" alt="Foundersuite"><span>Foundersuite</span></div>
-      <div class="logo-item"><img src="img/logos/hyperise.jpg" alt="Hyperise"><span>Hyperise</span></div>
-      <div class="logo-item"><img src="img/logos/squarepeg.jpg" alt="SquarePeg"><span>SquarePeg</span></div>
+    <div class="logo-marquee">
+      <div class="logo-track">
+        <div class="logo-item"><img src="img/logos/zendesk.jpg" alt="Zendesk"><span>Zendesk</span></div>
+        <div class="logo-item"><img src="img/logos/twilio.jpg" alt="Twilio Segment"><span>Twilio Segment</span></div>
+        <div class="logo-item"><img src="img/logos/freshworks.jpg" alt="Freshworks"><span>Freshworks</span></div>
+        <div class="logo-item"><img src="img/logos/dolby.jpg" alt="Dolby"><span>Dolby</span></div>
+        <div class="logo-item"><img src="img/logos/saastock.jpg" alt="SaaStock"><span>SaaStock</span></div>
+        <div class="logo-item"><img src="img/logos/foundersuite.jpg" alt="Foundersuite"><span>Foundersuite</span></div>
+        <div class="logo-item"><img src="img/logos/hyperise.jpg" alt="Hyperise"><span>Hyperise</span></div>
+        <div class="logo-item"><img src="img/logos/squarepeg.jpg" alt="SquarePeg"><span>SquarePeg</span></div>
+        <div class="logo-item"><img src="img/logos/zendesk.jpg" alt="Zendesk"><span>Zendesk</span></div>
+        <div class="logo-item"><img src="img/logos/twilio.jpg" alt="Twilio Segment"><span>Twilio Segment</span></div>
+        <div class="logo-item"><img src="img/logos/freshworks.jpg" alt="Freshworks"><span>Freshworks</span></div>
+        <div class="logo-item"><img src="img/logos/dolby.jpg" alt="Dolby"><span>Dolby</span></div>
+        <div class="logo-item"><img src="img/logos/saastock.jpg" alt="SaaStock"><span>SaaStock</span></div>
+        <div class="logo-item"><img src="img/logos/foundersuite.jpg" alt="Foundersuite"><span>Foundersuite</span></div>
+        <div class="logo-item"><img src="img/logos/hyperise.jpg" alt="Hyperise"><span>Hyperise</span></div>
+        <div class="logo-item"><img src="img/logos/squarepeg.jpg" alt="SquarePeg"><span>SquarePeg</span></div>
+      </div>
     </div>
   </section>
 
@@ -506,16 +522,16 @@
     <div class="container">
       <h2>What clients say</h2>
       <div class="testimonial-grid">
-        <div class="testimonial featured-testimonial" style="grid-column: 1 / -1;">
+        <div class="testimonial featured-testimonial" style="grid-column: 1 / -1; text-align: center;">
+          <a href="https://www.instagram.com/thekoerneroffice/" target="_blank">
+            <div class="avatar" style="width:96px;height:96px;margin:0 auto 20px;border:3px solid var(--accent-light);"><img src="img/chris-koerner.jpg" alt="Chris Koerner" onerror="this.remove();this.parentNode.textContent='CK'"></div>
+          </a>
           <div class="stars">★★★★★</div>
           <blockquote>"I've worked with a lot of lead gen people. Most overpromise, underdeliver, and drown you in dashboards. Dhruv was the opposite. He came in, asked smart questions, cut the fluff, and actually shipped. Leads showed up. Real ones. Not tire kickers. Not bots. Actual conversations that turned into revenue. If you want leads and don't want to babysit another agency, Dhruv's your guy."</blockquote>
-          <div class="author">
-            <a href="https://www.instagram.com/thekoerneroffice/" target="_blank">
-              <div class="avatar"><img src="img/chris-koerner.jpg" alt="Chris Koerner" onerror="this.remove();this.parentNode.textContent='CK'"></div>
-            </a>
+          <div class="author" style="justify-content:center;">
             <div class="author-info">
               <a href="https://www.instagram.com/thekoerneroffice/" target="_blank"><div class="name">Chris Koerner <span class="featured-badge">1M+ followers</span></div></a>
-              <div class="role">Owner, cofounders.com · <a href="https://www.instagram.com/thekoerneroffice/" target="_blank" style="color: var(--accent-light);">@thekoerneroffice</a></div>
+              <div class="role">Serial Entrepreneur · <a href="https://www.instagram.com/thekoerneroffice/" target="_blank" style="color: var(--accent-light);">@thekoerneroffice</a></div>
             </div>
           </div>
         </div>
@@ -554,7 +570,7 @@
             </a>
             <div class="author-info">
               <a href="https://www.linkedin.com/in/laramckeithan/" target="_blank"><div class="name">Lara McKeithan</div></a>
-              <div class="role">Founder & CEO, Pericus Ventures</div>
+              <div class="role">Founder & CEO, Pier</div>
             </div>
           </div>
         </div>
@@ -651,8 +667,8 @@
   <!-- FINAL CTA -->
   <section class="final-cta" id="cta">
     <div class="container">
-      <h2>Ready to stop chasing leads?</h2>
-      <p>Book a 15-minute call. We'll show you exactly how we'd build your pipeline — no pitch deck, no BS.</p>
+      <h2>Ready to own your pipeline?</h2>
+      <p>Book a 15-minute call. I'll walk you through the system and show you exactly how it would work for your business.</p>
       <a href="https://calendly.com/dhruv-fundedlist/15min" class="hero-cta">
         Book Your Free Strategy Call
         <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
@@ -664,10 +680,39 @@
   <!-- FOOTER -->
   <footer>
     <div class="container">
-      <p>© 2026 FundedList. Built in St. Louis. Powered by coffee and AI.</p>
+      <p>© 2026 FundedList. Built in St. Louis. Powered by fruit and AI.</p>
     </div>
   </footer>
 
-
+  <script>
+    !function(){
+      var track=document.querySelector('.logo-track');
+      if(!track)return;
+      // Wrap each set in a span so we can measure exactly
+      var items=Array.from(track.children);
+      var half=items.length/2;
+      var setA=document.createElement('div');
+      setA.style.cssText='display:inline-flex;align-items:center;flex-shrink:0';
+      var setB=document.createElement('div');
+      setB.style.cssText='display:inline-flex;align-items:center;flex-shrink:0';
+      for(var i=0;i<half;i++) setA.appendChild(items[i]);
+      for(var i=half;i<items.length;i++) setB.appendChild(items[i]);
+      track.innerHTML='';
+      track.appendChild(setA);
+      track.appendChild(setB);
+      // Sub-pixel measurement
+      var w=setA.getBoundingClientRect().width;
+      var x=0,last=0;
+      function f(ts){
+        if(!last)last=ts;
+        x-=(ts-last)*0.03;
+        last=ts;
+        if(x<=-w) x+=w;
+        track.style.transform='translate3d('+x.toFixed(2)+'px,0,0)';
+        requestAnimationFrame(f);
+      }
+      requestAnimationFrame(f);
+    }();
+  </script>
 </body>
 </html>
