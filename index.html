@@ -180,6 +180,55 @@
       .logo-item span { font-size: 0.8rem; }
     }
 
+    /* MEET DHRUV */
+    .about {
+      padding: 80px 0;
+      border-top: 1px solid var(--border);
+    }
+    .about-inner {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .about-photo {
+      flex-shrink: 0;
+      width: 260px;
+      height: 260px;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .about-photo .caption {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+      font-style: italic;
+    }
+    .about-text h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+    .about-text p {
+      color: #bbb;
+      font-size: 0.95rem;
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+    .about-text p:last-child { margin-bottom: 0; }
+    @media (max-width: 768px) {
+      .about-inner { flex-direction: column; text-align: center; gap: 32px; }
+      .about-photo { width: 200px; height: 200px; margin: 0 auto; }
+    }
+
     /* PROBLEM */
     .problem {
       padding: 80px 0;
@@ -569,6 +618,26 @@
               <div class="role">Founder & CEO, Pier</div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEET DHRUV -->
+  <section class="about">
+    <div class="container">
+      <div class="about-inner">
+        <div>
+          <div class="about-photo">
+            <img src="img/dhruv.jpg" alt="Dhruv Kar">
+          </div>
+          <div class="caption" style="text-align:center;font-size:0.75rem;color:#666;margin-top:8px;font-style:italic;">(I'm the one on the right)</div>
+        </div>
+        <div class="about-text">
+          <h2>Hey, I'm Dhruv.</h2>
+          <p>I spent 8 years helping scale my family's business to 8 figures. Then I went out on my own and built FundedList — a simple weekly leads report that turned into a system serving 100+ clients across SaaS, agencies, and startups.</p>
+          <p>Along the way, I figured out what actually works in outbound: the right data, the right message, at the right time. Now I teach founders how to build their own AI-powered pipeline — so they never have to depend on an agency again.</p>
+          <p>Based in St. Louis. Powered by fruit. 🍎</p>
         </div>
       </div>
     </div>
