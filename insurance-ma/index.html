@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <title>FundedList — AI-Powered Customer Pipeline & Deal Intelligence</title>
+  <meta name="description" content="Find acquisition-ready insurance agencies before they hire a broker. Monthly intelligence reports scored on succession risk, carrier trends, and team trajectory.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0a0a0a;
+      --surface: #141414;
+      --surface-2: #1a1a1a;
+      --border: #2a2a2a;
+      --text: #f5f5f5;
+      --text-muted: #888;
+      --accent: #4f46e5;
+      --accent-light: #6366f1;
+      --accent-glow: rgba(99, 102, 241, 0.15);
+      --green: #22c55e;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* NAV */
+    nav {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      text-decoration: none;
+      color: var(--text);
+    }
+    .logo span { color: var(--accent-light); }
+    .nav-cta {
+      background: var(--accent);
+      color: white;
+      padding: 10px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--accent-light); }
+
+    /* HERO */
+    .hero {
+      padding: 100px 0 80px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--accent-glow);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      color: var(--accent-light);
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 24px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--accent-light), #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: white;
+      padding: 16px 36px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      transition: all 0.2s;
+      box-shadow: 0 0 40px rgba(99, 102, 241, 0.25);
+    }
+    .hero-cta:hover {
+      background: var(--accent-light);
+      transform: translateY(-1px);
+      box-shadow: 0 0 60px rgba(99, 102, 241, 0.35);
+    }
+    .hero-cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--text);
+      padding: 16px 36px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+    .hero-cta-secondary:hover {
+      border-color: var(--accent-light);
+      background: var(--accent-glow);
+    }
+
+    /* STATS BAR */
+    .stats-bar {
+      padding: 48px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--accent-light);
+      letter-spacing: -1px;
+    }
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 500;
+    }
+    @media (max-width: 600px) {
+      .stats-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    /* PROBLEM SECTION */
+    .problem {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .problem h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-align: center;
+      letter-spacing: -0.5px;
+    }
+    .problem > .container > p {
+      text-align: center;
+      color: var(--text-muted);
+      max-width: 640px;
+      margin: 0 auto 20px;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+    .problem-highlight {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      max-width: 640px;
+      margin: 32px auto 0;
+    }
+    .problem-highlight p {
+      color: #bbb;
+      font-size: 0.95rem;
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+    .problem-highlight p:last-child { margin-bottom: 0; }
+    .problem-highlight strong {
+      color: var(--text);
+    }
+
+    /* HOW IT WORKS */
+    .how {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .how h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 48px;
+      text-align: center;
+      letter-spacing: -0.5px;
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .step {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px 28px;
+      position: relative;
+    }
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--accent-glow);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      color: var(--accent-light);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+    .step h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .step p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* WHAT YOU GET */
+    .deliverable {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .deliverable h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      text-align: center;
+      letter-spacing: -0.5px;
+    }
+    .deliverable > .container > p.subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      max-width: 580px;
+      margin: 0 auto 48px;
+      font-size: 1.05rem;
+    }
+    .deliverable-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .deliverable-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .deliverable-card .icon {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+    .deliverable-card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .deliverable-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* WHO IT'S FOR */
+    .audience {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .audience h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      text-align: center;
+      letter-spacing: -0.5px;
+    }
+    .audience > .container > p.subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 48px;
+      font-size: 1.05rem;
+    }
+    .audience-list {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .audience-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .audience-item:last-child { border-bottom: none; }
+    .audience-check {
+      color: var(--green);
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .audience-item h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .audience-item p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* ABOUT */
+    .about {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .about-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .about h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+    .about p {
+      color: #bbb;
+      font-size: 0.95rem;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    .about p:last-child { margin-bottom: 0; }
+    .about strong { color: var(--text); }
+
+    /* PRICING */
+    .pricing {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .pricing h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      text-align: center;
+      letter-spacing: -0.5px;
+    }
+    .pricing > .container > p.subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 48px;
+      font-size: 1.05rem;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .pricing-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 36px 32px;
+    }
+    .pricing-card.featured {
+      border-color: var(--accent);
+      box-shadow: 0 0 40px rgba(99, 102, 241, 0.1);
+    }
+    .pricing-card .plan-name {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-light);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .pricing-card .price {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 4px;
+    }
+    .pricing-card .price span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+    .pricing-card .price-desc {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+    .pricing-card ul {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+    .pricing-card ul li {
+      padding: 8px 0;
+      font-size: 0.92rem;
+      color: #ccc;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .pricing-card ul li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .pricing-card .plan-cta {
+      display: block;
+      text-align: center;
+      padding: 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+    .pricing-card .plan-cta.primary {
+      background: var(--accent);
+      color: white;
+    }
+    .pricing-card .plan-cta.primary:hover {
+      background: var(--accent-light);
+    }
+    .pricing-card .plan-cta.secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .pricing-card .plan-cta.secondary:hover {
+      border-color: var(--accent-light);
+    }
+
+    /* FAQ */
+    .faq {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .faq h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 48px;
+      text-align: center;
+      letter-spacing: -0.5px;
+    }
+    .faq-list {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 24px 0;
+    }
+    .faq-item:first-child { padding-top: 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .faq-a {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* FINAL CTA */
+    .final-cta {
+      padding: 100px 0;
+      text-align: center;
+    }
+    .final-cta h2 {
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+    .final-cta p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 36px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 32px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 60px 0 50px; }
+      .hero p { font-size: 1.05rem; }
+      .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+      .stat-number { font-size: 1.8rem; }
+      .steps { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="container">
+      <a href="/" class="logo">Funded<span>List</span></a>
+      <a href="/book" class="nav-cta">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">🏢 Insurance Acquisition Intelligence</div>
+      <h1>Find agencies ready to sell — <em>before they hire a broker.</em></h1>
+      <p>I score 40,000+ independent agencies on the signals that come before every sale. You get a monthly shortlist for your territory. No guesswork. No waiting for the phone to ring.</p>
+      <div class="hero-buttons">
+        <a href="/book" class="hero-cta">Book a Call →</a>
+        <a href="#how" class="hero-cta-secondary">See How It Works</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div>
+          <div class="stat-number">40,000+</div>
+          <div class="stat-label">Agencies Tracked</div>
+        </div>
+        <div>
+          <div class="stat-number">50</div>
+          <div class="stat-label">States Covered</div>
+        </div>
+        <div>
+          <div class="stat-number">12–18 mo</div>
+          <div class="stat-label">Lead Time on Signals</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="problem">
+    <div class="container">
+      <h2>You're competing for deals everyone else already sees.</h2>
+      <p>Most acquisition targets come through three channels: a banker calls, a broker reaches out, or someone at a conference mentions they're "exploring options."</p>
+      <p>By then, Hub and Acrisure already know. You're bidding against firms with 10x your resources on deals that are already in play.</p>
+      <div class="problem-highlight">
+        <p><strong>The agencies you really want — the ones that haven't started shopping yet — are invisible to you.</strong></p>
+        <p>The owner who's 62 with no succession plan. The agency that lost three producers last year. The book that's been flat for five years while the owner coasts toward retirement.</p>
+        <p>Those signals are hiding in public data. I built a system to find them.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how" id="how">
+    <div class="container">
+      <h2>Three data layers most acquirers never look at.</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Licensing &amp; Tenure</h3>
+          <p>State departments publish every producer license in America. I track principal tenure, license lapses, and whether there's a next generation licensed at the agency. When a 30-year veteran has no successor on file, that's a signal.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Carrier Appointments</h3>
+          <p>Carrier appointment filings show which agencies are adding relationships and which are letting them lapse. An agency that hasn't added a new carrier in 3 years looks very different from one that added four last quarter.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Team Trajectory</h3>
+          <p>Producer headcount, new hires, departures. An agency that went from 12 producers to 7 over three years is telling you something — even if the owner isn't saying it out loud.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET -->
+  <section class="deliverable">
+    <div class="container">
+      <h2>A monthly shortlist. Not a database.</h2>
+      <p class="subtitle">I'm not selling you a login with 40,000 rows. You need the 15–30 agencies in your region most likely to transact in the next 12–18 months.</p>
+      <div class="deliverable-grid">
+        <div class="deliverable-card">
+          <div class="icon">📊</div>
+          <h3>Acquisition Readiness Scores</h3>
+          <p>Every agency in your territory scored on succession risk, carrier trends, and team trajectory. Updated monthly.</p>
+        </div>
+        <div class="deliverable-card">
+          <div class="icon">🔔</div>
+          <h3>New Signal Alerts</h3>
+          <p>When a high-scoring agency shows a new exit signal — license lapse, producer departure, carrier drop — you'll know before anyone else.</p>
+        </div>
+        <div class="deliverable-card">
+          <div class="icon">🗺️</div>
+          <h3>Regional Deep-Dives</h3>
+          <p>Quarterly breakdown of your top 10 targets with detailed profiles. Succession gaps, team changes, carrier concentration risk.</p>
+        </div>
+        <div class="deliverable-card">
+          <div class="icon">📞</div>
+          <h3>Direct Access</h3>
+          <p>Want to dig into a specific market or agency? Direct line to me. No ticket system, no waiting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="audience">
+    <div class="container">
+      <h2>Built for acquirers doing 3–30 deals a year.</h2>
+      <p class="subtitle">If you're Acrisure, you have a 20-person corp dev team. This is for everyone else.</p>
+      <div class="audience-list">
+        <div class="audience-item">
+          <div class="audience-check">✓</div>
+          <div>
+            <h3>Regional consolidators expanding into adjacent states</h3>
+            <p>You know your home market. I'll show you which agencies in your next market are ready for a conversation.</p>
+          </div>
+        </div>
+        <div class="audience-item">
+          <div class="audience-check">✓</div>
+          <div>
+            <h3>PE-backed platforms with acquisition mandates</h3>
+            <p>Your investors want deal flow. I'll give you a scored pipeline, not a cold call list.</p>
+          </div>
+        </div>
+        <div class="audience-item">
+          <div class="audience-check">✓</div>
+          <div>
+            <h3>Family-owned brokerages making strategic acquisitions</h3>
+            <p>You're doing 2–5 deals a year and every one matters. I'll help you find the right ones.</p>
+          </div>
+        </div>
+        <div class="audience-item">
+          <div class="audience-check">✓</div>
+          <div>
+            <h3>Specialty acquirers looking for niche books</h3>
+            <p>Looking for agencies with specific carrier appointments or lines of business? I can filter for that.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY ME -->
+  <section class="about">
+    <div class="container">
+      <div class="about-inner">
+        <h2>I'm a data guy who went deep on insurance.</h2>
+        <p>I'm Dhruv. I run FundedList, where I've helped 100+ companies build AI-powered sales pipelines. Last year, I got obsessed with insurance distribution — specifically the question of whether you could predict which agencies are going to sell before they come to market.</p>
+        <p>Turns out you can. Not perfectly. But the signals are there if you know where to look.</p>
+        <p>I've pulled licensing data from every state, built carrier appointment tracking across 40,000+ agencies, and scored them on the patterns that precede a sale. <strong>I'm not an insurance guy pretending to be a data guy. I'm a data guy who went deep on insurance.</strong> That's why this works.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing">
+    <div class="container">
+      <h2>Simple. No long-term contracts.</h2>
+      <p class="subtitle">Month-to-month. First report delivered within 7 days.</p>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="plan-name">Regional Intel</div>
+          <div class="price">$2,500 <span>/mo</span></div>
+          <div class="price-desc">One state or metro area</div>
+          <ul>
+            <li>Monthly acquisition readiness report (15–30 scored agencies)</li>
+            <li>Quarterly deep-dive on your top 10 targets</li>
+            <li>Signal alerts between reports</li>
+            <li>Direct access — no ticket system</li>
+          </ul>
+          <a href="/book" class="plan-cta secondary">Book a Call</a>
+        </div>
+        <div class="pricing-card featured">
+          <div class="plan-name">Multi-Market</div>
+          <div class="price">$4,500 <span>/mo</span></div>
+          <div class="price-desc">Up to 5 states or regions</div>
+          <ul>
+            <li>Everything in Regional, scaled across markets</li>
+            <li>Competitive activity tracking in your markets</li>
+            <li>Priority access for custom research</li>
+            <li>Cross-market pattern analysis</li>
+          </ul>
+          <a href="/book" class="plan-cta primary">Book a Call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <h2>Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">How is this different from just buying a list?</div>
+          <div class="faq-a">Lists give you every agency in a state. I give you the 15–30 that are most likely to sell. The scoring is the product — not the data.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Where does the data come from?</div>
+          <div class="faq-a">State insurance department filings, NAIC licensing records, carrier appointment data, and team/producer tracking. All publicly available, legally obtained information.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How accurate is the scoring?</div>
+          <div class="faq-a">It's a leading indicator, not a crystal ball. Not every high-scoring agency will sell. But when I look at agencies that have sold in the past two years, most of them would have scored high on these signals 12–18 months before the deal.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can I try it before committing?</div>
+          <div class="faq-a">Yes. Book a call and I'll walk you through a sample report for your region. If the signals match what you're seeing in the market, we'll go from there.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do you work with competing acquirers in the same market?</div>
+          <div class="faq-a">I limit coverage to avoid direct conflicts. If another client already has exclusive coverage in your primary market, I'll tell you upfront.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>Stop waiting for deals to come to you.</h2>
+      <p>Your next 10 acquisitions are already showing signals. Let me show you which ones.</p>
+      <a href="/book" class="hero-cta">Book a Call — Free Sample Report →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      © 2026 FundedList. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
