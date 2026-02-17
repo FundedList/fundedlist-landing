@@ -31,7 +31,7 @@
       -webkit-font-smoothing: antialiased;
     }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-    nav { padding: 20px 0; border-bottom: 1px solid var(--border); }
+    nav { padding: 20px 0; border-bottom: 1px solid var(--border); position: relative; }
     nav .container { display: flex; justify-content: space-between; align-items: center; }
     .logo { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.5px; text-decoration: none; color: var(--text); }
     .logo span { color: var(--accent-light); }
@@ -158,6 +158,48 @@
     @media (max-width: 640px) {
       .post { padding: 60px 24px 80px; }
     }
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      color: var(--text);
+    }
+    .hamburger svg { display: block; }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      z-index: 100;
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a {
+      display: block;
+      padding: 12px 0;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border-bottom: 1px solid var(--border);
+      transition: color .2s;
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: var(--text); }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+    }
   </style>
 </head>
 <body>
@@ -165,12 +207,23 @@
   <nav>
     <div class="container">
       <a href="/" class="logo">Funded<span>List</span></a>
-      <div class="nav-links">
-        <a href="/blog/" class="nav-link">Blog</a>
-        <a href="/weekly-report/" class="nav-link">Weekly Report</a>
-        <a href="/insurance-ma/" class="nav-link">M&A Intel</a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="/blog/" class="nav-link">Blog</a>
+          <a href="/weekly-report/" class="nav-link">Weekly Report</a>
+          <a href="/insurance-ma/" class="nav-link">M&amp;A Intel</a>
+        </div>
         <a href="/book" class="nav-cta">Book a Call</a>
+        <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')" aria-label="Menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
       </div>
+    </div>
+    <div class="mobile-menu">
+      <a href="/blog/">Blog</a>
+      <a href="/weekly-report/">Weekly Report</a>
+      <a href="/insurance-ma/">M&amp;A Intel</a>
+      <a href="/book">Book a Call</a>
     </div>
   </nav>
 
