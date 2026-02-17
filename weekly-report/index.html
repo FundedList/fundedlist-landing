@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <title>Weekly Leads Report — FundedList</title>
+  <title>Weekly Funded Founders Report — FundedList</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
@@ -33,7 +33,6 @@
     }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
-    /* NAV */
     nav { padding: 20px 0; border-bottom: 1px solid var(--border); }
     nav .container { display: flex; justify-content: space-between; align-items: center; }
     .logo { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.5px; text-decoration: none; color: var(--text); }
@@ -44,7 +43,6 @@
     .nav-cta { background: var(--accent); color: white; padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: background 0.2s; }
     .nav-cta:hover { background: var(--accent-light); }
 
-    /* HERO */
     .hero { padding: 100px 0 80px; text-align: center; }
     .hero-badge {
       display: inline-block;
@@ -76,7 +74,7 @@
     .hero p {
       font-size: 1.15rem;
       color: var(--text-muted);
-      max-width: 560px;
+      max-width: 580px;
       margin: 0 auto 40px;
       line-height: 1.7;
     }
@@ -118,182 +116,113 @@
     .btn-primary svg, .btn-secondary svg { width: 20px; height: 20px; }
 
     /* STATS BAR */
-    .stats-bar {
-      padding: 48px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      text-align: center;
-    }
+    .stats-bar { padding: 48px 0; border-bottom: 1px solid var(--border); }
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; text-align: center; }
     .stat-number {
-      font-size: 2.4rem;
-      font-weight: 800;
-      letter-spacing: -1px;
+      font-size: 2.4rem; font-weight: 800; letter-spacing: -1px;
       background: linear-gradient(135deg, var(--accent-light), #a78bfa);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
     .stat-label { font-size: 0.9rem; color: var(--text-muted); margin-top: 4px; }
-    @media (max-width: 640px) {
-      .stats-grid { grid-template-columns: 1fr; gap: 24px; }
-    }
+    @media (max-width: 640px) { .stats-grid { grid-template-columns: 1fr; gap: 24px; } }
 
-    /* SECTIONS */
     section { padding: 80px 0; }
     section + section { border-top: 1px solid var(--border); }
-    section h2 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin-bottom: 16px;
-      text-align: center;
-      letter-spacing: -0.5px;
-    }
-    section > .container > .section-sub {
-      text-align: center;
-      color: var(--text-muted);
-      margin-bottom: 48px;
-      font-size: 1.05rem;
-    }
+    section h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 16px; text-align: center; letter-spacing: -0.5px; }
+    section > .container > .section-sub { text-align: center; color: var(--text-muted); margin-bottom: 48px; font-size: 1.05rem; }
 
-    /* WHAT YOU GET */
-    .feature-grid {
+    /* COLUMNS LIST */
+    .columns-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+      max-width: 780px;
+      margin: 0 auto;
     }
-    @media (max-width: 640px) { .feature-grid { grid-template-columns: 1fr; } }
-    .feature-card {
-      display: flex;
-      gap: 16px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
-    }
-    .feature-icon {
-      flex-shrink: 0;
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      background: var(--accent-glow);
+    .column-item {
       display: flex;
       align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
+      gap: 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 0.9rem;
+    }
+    .column-item .check { color: var(--green); font-weight: 700; flex-shrink: 0; }
+    .column-group {
+      margin-bottom: 32px;
+    }
+    .column-group-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-light);
+      font-weight: 600;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    /* FEATURES */
+    .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    @media (max-width: 640px) { .feature-grid { grid-template-columns: 1fr; } }
+    .feature-card {
+      display: flex; gap: 16px;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px;
+    }
+    .feature-icon {
+      flex-shrink: 0; width: 44px; height: 44px; border-radius: 10px;
+      background: var(--accent-glow); display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
     }
     .feature-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
     .feature-card p { color: var(--text-muted); font-size: 0.9rem; }
 
-    /* HOW IT WORKS */
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-    }
-    .step {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 32px 28px;
-    }
+    /* STEPS */
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+    .step { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 32px 28px; }
     .step-num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      background: var(--accent-glow);
-      color: var(--accent-light);
-      font-weight: 700;
-      font-size: 0.95rem;
-      margin-bottom: 16px;
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 8px;
+      background: var(--accent-glow); color: var(--accent-light); font-weight: 700; font-size: 0.95rem; margin-bottom: 16px;
     }
     .step h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 8px; }
     .step p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
 
-    /* WHO IT'S FOR */
-    .audience-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-    .audience-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 28px;
-    }
+    /* AUDIENCE */
+    .audience-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .audience-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 28px; }
     .audience-card .icon { font-size: 1.6rem; margin-bottom: 12px; }
     .audience-card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 8px; }
     .audience-card p { color: var(--text-muted); font-size: 0.95rem; }
 
     /* PRICING */
     .pricing-card {
-      max-width: 480px;
-      margin: 0 auto;
-      background: var(--surface);
-      border: 2px solid var(--accent);
-      border-radius: 16px;
-      padding: 48px 40px;
-      text-align: center;
+      max-width: 480px; margin: 0 auto;
+      background: var(--surface); border: 2px solid var(--accent); border-radius: 16px; padding: 48px 40px; text-align: center;
     }
-    .pricing-card .price {
-      font-size: 3rem;
-      font-weight: 800;
-      letter-spacing: -2px;
-      margin-bottom: 4px;
-    }
-    .pricing-card .price span {
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: var(--text-muted);
-      letter-spacing: 0;
-    }
-    .pricing-card .price-sub {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 32px;
-    }
-    .pricing-features {
-      list-style: none;
-      text-align: left;
-      margin-bottom: 32px;
-    }
+    .pricing-card .price { font-size: 3rem; font-weight: 800; letter-spacing: -2px; margin-bottom: 4px; }
+    .pricing-card .price span { font-size: 1.1rem; font-weight: 500; color: var(--text-muted); letter-spacing: 0; }
+    .pricing-card .price-sub { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 32px; }
+    .pricing-features { list-style: none; text-align: left; margin-bottom: 32px; }
     .pricing-features li {
-      padding: 10px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.95rem;
-      color: #ccc;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      padding: 10px 0; border-bottom: 1px solid var(--border);
+      font-size: 0.95rem; color: #ccc; display: flex; align-items: center; gap: 10px;
     }
     .pricing-features li:last-child { border-bottom: none; }
     .pricing-features .check { color: var(--green); font-weight: 700; }
 
     /* TESTIMONIAL */
     .testimonial {
-      max-width: 640px;
-      margin: 0 auto;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 40px;
-      text-align: center;
+      max-width: 640px; margin: 0 auto;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 40px; text-align: center;
     }
     .testimonial .stars { color: #fbbf24; font-size: 1.1rem; margin-bottom: 16px; letter-spacing: 2px; }
     .testimonial blockquote { font-size: 1.05rem; line-height: 1.8; color: #ccc; margin-bottom: 20px; font-style: normal; }
     .testimonial .author { display: flex; align-items: center; gap: 12px; justify-content: center; }
     .testimonial .avatar {
       width: 48px; height: 48px; border-radius: 50%;
-      background: var(--accent-glow);
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 700; color: var(--accent-light); font-size: 0.9rem;
-      overflow: hidden;
+      background: var(--accent-glow); display: flex; align-items: center; justify-content: center;
+      font-weight: 700; color: var(--accent-light); font-size: 0.9rem; overflow: hidden;
     }
     .testimonial .avatar img { width: 100%; height: 100%; object-fit: cover; }
     .testimonial .name { font-weight: 600; font-size: 0.9rem; }
@@ -301,57 +230,33 @@
 
     /* FAQ */
     .faq-list { max-width: 680px; margin: 0 auto; }
-    .faq-item {
-      border-bottom: 1px solid var(--border);
-      padding: 20px 0;
-    }
+    .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
     .faq-q {
-      font-weight: 600;
-      font-size: 1rem;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      font-weight: 600; font-size: 1rem; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
     }
     .faq-q::after { content: '+'; font-size: 1.4rem; color: var(--text-muted); transition: transform 0.2s; }
     .faq-item.open .faq-q::after { content: '−'; }
-    .faq-a {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; }
     .faq-item.open .faq-a { max-height: 200px; padding-top: 12px; }
 
     /* CTA */
     .final-cta { padding: 100px 0; text-align: center; }
-    .final-cta h2 {
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      font-weight: 800;
-      letter-spacing: -1px;
-      margin-bottom: 16px;
-    }
+    .final-cta h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; letter-spacing: -1px; margin-bottom: 16px; }
     .final-cta p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 36px; max-width: 500px; margin-left: auto; margin-right: auto; }
     .fine-print { font-size: 0.8rem; color: var(--text-muted); margin-top: 16px; }
 
     /* UPSELL */
     .upsell {
-      max-width: 640px;
-      margin: 0 auto;
+      max-width: 640px; margin: 0 auto;
       background: linear-gradient(135deg, var(--surface), rgba(79, 70, 229, 0.06));
-      border: 1px solid rgba(99, 102, 241, 0.25);
-      border-radius: 12px;
-      padding: 32px;
-      text-align: center;
+      border: 1px solid rgba(99, 102, 241, 0.25); border-radius: 12px; padding: 32px; text-align: center;
     }
     .upsell h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 10px; }
     .upsell p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; line-height: 1.7; }
     .upsell a { color: var(--accent-light); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
     .upsell a:hover { text-decoration: underline; }
 
-    /* FOOTER */
     footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; font-size: 0.85rem; color: var(--text-muted); }
     footer a { color: #888; text-decoration: none; }
 
@@ -376,12 +281,12 @@
 
   <section class="hero">
     <div class="container">
-      <div class="hero-badge">📊 Weekly Intelligence</div>
-      <h1>Fresh leads in your inbox. <em>Every week.</em></h1>
-      <p>A curated CSV of decision-makers who match your ICP — researched, verified, and delivered before your competitors even know they exist.</p>
+      <div class="hero-badge">📊 Every Monday</div>
+      <h1>Every founder who raised capital last week. <em>In your inbox Monday morning.</em></h1>
+      <p>A clean CSV of newly funded founders — names, emails, LinkedIn, company details, and funding data — delivered weekly so you can reach them before anyone else.</p>
       <div class="hero-actions">
         <a href="/book" class="btn-primary">
-          Start Getting Leads
+          Subscribe — $149/mo
           <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </a>
         <a href="/weekly-report/sample/" class="btn-secondary">
@@ -397,7 +302,7 @@
       <div class="stats-grid">
         <div>
           <div class="stat-number">50%+</div>
-          <div class="stat-label">Average open rates</div>
+          <div class="stat-label">Open rates from our leads</div>
         </div>
         <div>
           <div class="stat-number">6-10%</div>
@@ -411,86 +316,133 @@
     </div>
   </section>
 
+  <!-- WHY TIMING MATTERS -->
   <section>
     <div class="container">
-      <h2>What you get every week</h2>
-      <p class="section-sub">A ready-to-use lead list, delivered straight to your inbox as a CSV.</p>
+      <h2>Why timing is everything</h2>
+      <p class="section-sub">Founders who just raised are actively spending. Reach them in the first week and you're early. Wait a month and you're in line with everyone else.</p>
       <div class="feature-grid">
         <div class="feature-card">
           <div class="feature-icon">⏱️</div>
           <div>
-            <h3>Timely, not stale</h3>
-            <p>Leads are researched and compiled that week — not recycled from a database everyone else is using. You reach people before your competitors do.</p>
+            <h3>Fresh, not recycled</h3>
+            <p>Every report covers the previous week's funding rounds. You're not working from a stale database — you're reaching founders while the wire transfer is still settling.</p>
           </div>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🎯</div>
+          <div class="feature-icon">📬</div>
           <div>
-            <h3>Matched to your ICP</h3>
-            <p>Every list is built around your ideal customer profile — industry, company size, role, geography. No junk contacts, no irrelevant names.</p>
+            <h3>Monday morning delivery</h3>
+            <p>Your report lands in your inbox every Monday. Load it into your outreach tool and start the week with a fresh batch of funded prospects.</p>
           </div>
         </div>
         <div class="feature-card">
           <div class="feature-icon">📧</div>
           <div>
-            <h3>CSV via email, ready to load</h3>
-            <p>No dashboards. No logins. Just a clean CSV in your inbox every week — import it into your CRM or email tool in seconds.</p>
+            <h3>CSV — ready to use</h3>
+            <p>No dashboards. No logins. No API. Just a clean CSV you can import into any CRM, email tool, or spreadsheet in seconds.</p>
           </div>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🤖</div>
+          <div class="feature-icon">🌍</div>
           <div>
-            <h3>AI-powered research</h3>
-            <p>We use AI to find companies showing buying signals — funding rounds, job postings, tech stack changes, expansion moves — so you reach them at the right moment.</p>
+            <h3>Global coverage</h3>
+            <p>Seed rounds to Series C+. Startups across every industry and geography. Filter by what matters to you.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- WHAT'S IN THE REPORT -->
   <section>
     <div class="container">
-      <h2>How it works</h2>
-      <p class="section-sub">Simple. No learning curve. No setup headaches.</p>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <h3>Tell us who you sell to</h3>
-          <p>Hop on a quick call. We'll nail down your ICP — who your best customers are, what triggers a purchase, and where to find more of them.</p>
+      <h2>What's in every report</h2>
+      <p class="section-sub">18 data points per founder. Everything you need to personalize outreach and close deals.</p>
+
+      <div class="column-group">
+        <div class="column-group-title">Founder Info</div>
+        <div class="columns-grid">
+          <div class="column-item"><span class="check">✓</span> Full Name</div>
+          <div class="column-item"><span class="check">✓</span> First &amp; Last Name</div>
+          <div class="column-item"><span class="check">✓</span> Email Address</div>
+          <div class="column-item"><span class="check">✓</span> LinkedIn Profile</div>
+          <div class="column-item"><span class="check">✓</span> Position / Title</div>
         </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <h3>We build your list</h3>
-          <p>Every week, our AI research system scans for fresh leads matching your criteria. We verify contacts and compile a clean, actionable CSV.</p>
+      </div>
+
+      <div class="column-group">
+        <div class="column-group-title">Company Info</div>
+        <div class="columns-grid">
+          <div class="column-item"><span class="check">✓</span> Company Name</div>
+          <div class="column-item"><span class="check">✓</span> Industry</div>
+          <div class="column-item"><span class="check">✓</span> Headquarters</div>
+          <div class="column-item"><span class="check">✓</span> Country &amp; Continent</div>
+          <div class="column-item"><span class="check">✓</span> Description</div>
+          <div class="column-item"><span class="check">✓</span> Website</div>
+          <div class="column-item"><span class="check">✓</span> Company LinkedIn</div>
+          <div class="column-item"><span class="check">✓</span> Number of Employees</div>
         </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <h3>Open your inbox</h3>
-          <p>Your leads show up every week like clockwork. Load them into your outreach tool and start conversations with people who actually match.</p>
+      </div>
+
+      <div class="column-group">
+        <div class="column-group-title">Funding Data</div>
+        <div class="columns-grid">
+          <div class="column-item"><span class="check">✓</span> Funding Status</div>
+          <div class="column-item"><span class="check">✓</span> Last Funding Date</div>
+          <div class="column-item"><span class="check">✓</span> Last Funding Amount (USD)</div>
+          <div class="column-item"><span class="check">✓</span> Last Funding Type</div>
+          <div class="column-item"><span class="check">✓</span> Total Funding (USD)</div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- HOW IT WORKS -->
   <section>
     <div class="container">
-      <h2>Built for teams who do outbound</h2>
-      <p class="section-sub">If cold outreach is part of your growth strategy, this is your fuel.</p>
+      <h2>How it works</h2>
+      <p class="section-sub">Subscribe. Open your inbox Monday. Start selling.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Subscribe</h3>
+          <p>Sign up for $149/mo. No contracts, no setup calls, no onboarding hoops. You're in.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Get your report Monday</h3>
+          <p>Every Monday morning, a CSV of every founder who raised capital the previous week lands in your inbox. Ready to use.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Load and launch</h3>
+          <p>Import the CSV into your outreach tool, CRM, or spreadsheet. Reach funded founders while the news is still fresh.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section>
+    <div class="container">
+      <h2>Who uses this</h2>
+      <p class="section-sub">Anyone who sells to startups and founders.</p>
       <div class="audience-grid">
         <div class="audience-card">
           <div class="icon">🚀</div>
-          <h3>Founders & CEOs</h3>
-          <p>You don't have time to research leads. Get a weekly drop of qualified prospects and spend your time closing, not hunting.</p>
-        </div>
-        <div class="audience-card">
-          <div class="icon">📈</div>
-          <h3>Sales teams</h3>
-          <p>Stop wasting hours on bad lists. Give your SDRs fresh, targeted contacts every Monday and watch reply rates climb.</p>
+          <h3>SaaS companies</h3>
+          <p>Funded startups are actively buying tools. Reach them the week they close their round — before they've already picked your competitor.</p>
         </div>
         <div class="audience-card">
           <div class="icon">🏢</div>
-          <h3>Agencies & consultants</h3>
-          <p>Use FundedList data for your own outreach or resell as part of your client services. The leads are yours to use.</p>
+          <h3>Agencies &amp; service providers</h3>
+          <p>New money means new projects. Funded companies need marketing, design, dev, recruiting — get there first.</p>
+        </div>
+        <div class="audience-card">
+          <div class="icon">📈</div>
+          <h3>Sales teams &amp; SDRs</h3>
+          <p>Replace hours of manual prospecting with a Monday morning CSV. More conversations, less research.</p>
         </div>
       </div>
     </div>
@@ -521,17 +473,17 @@
   <section>
     <div class="container">
       <h2>Simple pricing</h2>
-      <p class="section-sub">One plan. No contracts. Cancel anytime.</p>
+      <p class="section-sub">One report. Every Monday. Cancel anytime.</p>
       <div class="pricing-card">
         <div class="price">$149 <span>/ month</span></div>
-        <div class="price-sub">Delivered weekly via email</div>
+        <div class="price-sub">Delivered every Monday via email</div>
         <ul class="pricing-features">
-          <li><span class="check">✓</span> Fresh leads matched to your ICP every week</li>
-          <li><span class="check">✓</span> AI-researched with buying signal detection</li>
-          <li><span class="check">✓</span> Clean CSV — ready for any outreach tool</li>
-          <li><span class="check">✓</span> Verified contact data (email, phone, title)</li>
-          <li><span class="check">✓</span> Onboarding call to define your ICP</li>
-          <li><span class="check">✓</span> Adjust targeting anytime</li>
+          <li><span class="check">✓</span> Every founder who raised capital last week</li>
+          <li><span class="check">✓</span> 18 data points per founder</li>
+          <li><span class="check">✓</span> Verified emails &amp; LinkedIn profiles</li>
+          <li><span class="check">✓</span> Clean CSV — import anywhere</li>
+          <li><span class="check">✓</span> Global coverage, all funding stages</li>
+          <li><span class="check">✓</span> No contracts — cancel anytime</li>
         </ul>
         <a href="/book" class="btn-primary" style="width:100%;justify-content:center;">
           Get Started
@@ -545,8 +497,8 @@
   <section>
     <div class="container">
       <div class="upsell">
-        <h3>Want us to run the outreach too?</h3>
-        <p>Some clients start with the weekly report, then realize they want the whole system — AI-powered campaigns, messaging, and a pipeline that runs itself. If that sounds like you, we can help.</p>
+        <h3>Need help turning these leads into meetings?</h3>
+        <p>Some subscribers use the report as fuel for their own outreach. Others want the full system — AI-powered campaigns, copy, and a pipeline that runs itself. If that's you, we can help with that too.</p>
         <a href="/book">Learn about the full GTM system →</a>
       </div>
     </div>
@@ -558,28 +510,28 @@
       <h2>Questions</h2>
       <div class="faq-list">
         <div class="faq-item">
-          <div class="faq-q">What format do the leads come in?</div>
-          <div class="faq-a">A clean CSV file, emailed directly to you. Columns include name, title, company, email, phone, LinkedIn URL, and any relevant buying signals. Import it into any CRM or outreach tool in seconds.</div>
+          <div class="faq-q">What exactly is in the CSV?</div>
+          <div class="faq-a">18 columns: founder name (full, first, last), email, LinkedIn, title, company name, industry, HQ, country, continent, description, website, company LinkedIn, employee count, funding status, last funding date, last funding amount, funding type, and total funding raised.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q">How are the leads different from ZoomInfo or Apollo?</div>
-          <div class="faq-a">Those platforms give you access to the same database everyone else uses. Our leads are researched weekly using AI — we find companies showing active buying signals and verify contacts in real time. Fresher data means higher reply rates.</div>
+          <div class="faq-q">How is this different from Crunchbase or PitchBook?</div>
+          <div class="faq-a">Those are databases you have to search and filter yourself. This is a done-for-you weekly report — every founder who raised, compiled into a ready-to-use CSV. No searching, no subscriptions to expensive platforms, no manual exports.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q">How many leads per week?</div>
-          <div class="faq-a">It depends on your ICP and market size, but most clients receive 50-200 leads per week. We prioritize quality over quantity — every contact is relevant and verified.</div>
+          <div class="faq-q">How many founders per report?</div>
+          <div class="faq-a">It varies by week depending on funding activity, but typically 100-300+ founders per report across all stages and geographies.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q">Can I change my targeting?</div>
-          <div class="faq-a">Absolutely. Just let us know and we'll adjust for the next week's report. No extra charge.</div>
+          <div class="faq-q">Can I filter by industry or funding stage?</div>
+          <div class="faq-a">The report includes all funded founders from the previous week. Since it's a CSV, you can easily filter by industry, country, funding type, or amount in Excel or Google Sheets.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">When does it arrive?</div>
+          <div class="faq-a">Every Monday morning, covering the previous week's funding rounds. Start your week with a fresh batch of prospects.</div>
         </div>
         <div class="faq-item">
           <div class="faq-q">Is there a contract?</div>
-          <div class="faq-a">No contracts. Month-to-month. Cancel anytime with no questions asked.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">What kind of reply rates can I expect?</div>
-          <div class="faq-a">Our clients typically see 50%+ open rates and 6-10% reply rates when using our leads with solid outreach copy. The timeliness and targeting make a big difference.</div>
+          <div class="faq-a">No contracts. Month-to-month. Cancel anytime, no questions asked.</div>
         </div>
       </div>
     </div>
@@ -588,13 +540,13 @@
   <!-- FINAL CTA -->
   <section class="final-cta">
     <div class="container">
-      <h2>Stop guessing. Start reaching the right people.</h2>
-      <p>Book a quick call and we'll build your first list within the week.</p>
+      <h2>Be the first to reach funded founders.</h2>
+      <p>Every Monday. A fresh CSV. The founders everyone else will find next month.</p>
       <a href="/book" class="btn-primary">
-        Book Your Free Call
+        Subscribe — $149/mo
         <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
       </a>
-      <p class="fine-print">No commitment. No credit card. Just a conversation.</p>
+      <p class="fine-print">No commitment. No credit card to start. Just a conversation.</p>
     </div>
   </section>
 
@@ -606,9 +558,7 @@
 
   <script>
     document.querySelectorAll('.faq-q').forEach(function(q) {
-      q.addEventListener('click', function() {
-        this.parentElement.classList.toggle('open');
-      });
+      q.addEventListener('click', function() { this.parentElement.classList.toggle('open'); });
     });
   </script>
 </body>

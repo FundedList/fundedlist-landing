@@ -65,12 +65,11 @@
     .hero p {
       font-size: 1.1rem;
       color: var(--text-muted);
-      max-width: 560px;
+      max-width: 580px;
       margin: 0 auto;
       line-height: 1.7;
     }
 
-    /* SAMPLE TABLE */
     .sample-section { padding: 0 0 80px; }
     .sample-label {
       text-align: center;
@@ -90,58 +89,50 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 0.88rem;
-      min-width: 900px;
+      font-size: 0.82rem;
+      min-width: 1400px;
     }
     th {
       background: var(--surface-2);
-      padding: 14px 16px;
+      padding: 12px 14px;
       text-align: left;
       font-weight: 600;
-      font-size: 0.8rem;
+      font-size: 0.72rem;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
       color: var(--text-muted);
       border-bottom: 1px solid var(--border);
       white-space: nowrap;
     }
     td {
-      padding: 14px 16px;
+      padding: 12px 14px;
       border-bottom: 1px solid var(--border);
       color: #ccc;
       vertical-align: top;
+      white-space: nowrap;
     }
     tr:last-child td { border-bottom: none; }
     tr:hover td { background: rgba(99, 102, 241, 0.04); }
-    .signal-tag {
+    .funding-tag {
       display: inline-block;
-      background: var(--accent-glow);
-      border: 1px solid rgba(99, 102, 241, 0.2);
-      color: var(--accent-light);
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.25);
+      color: var(--green);
       padding: 2px 8px;
       border-radius: 4px;
       font-size: 0.75rem;
       font-weight: 500;
-      white-space: nowrap;
-    }
-    .signal-tag.green {
-      background: rgba(34, 197, 94, 0.1);
-      border-color: rgba(34, 197, 94, 0.25);
-      color: var(--green);
-    }
-    .signal-tag.amber {
-      background: rgba(251, 191, 36, 0.1);
-      border-color: rgba(251, 191, 36, 0.25);
-      color: #fbbf24;
-    }
-    .blurred {
-      filter: blur(4px);
-      user-select: none;
-      pointer-events: none;
     }
     .blurred-row td { filter: blur(4px); user-select: none; }
 
-    /* CALLOUT */
+    .scroll-hint {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 12px;
+      font-style: italic;
+    }
+
     .callout {
       max-width: 640px;
       margin: 48px auto 0;
@@ -154,36 +145,22 @@
     .callout h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.5px; }
     .callout p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px; line-height: 1.7; }
     .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--accent);
-      color: white;
-      padding: 14px 32px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1rem;
-      transition: all 0.2s;
-      box-shadow: 0 0 40px rgba(99, 102, 241, 0.25);
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--accent); color: white; padding: 14px 32px; border-radius: 10px;
+      text-decoration: none; font-weight: 700; font-size: 1rem;
+      transition: all 0.2s; box-shadow: 0 0 40px rgba(99, 102, 241, 0.25);
     }
     .btn-primary:hover { background: var(--accent-light); transform: translateY(-1px); }
     .btn-primary svg { width: 18px; height: 18px; }
 
     .note {
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      margin-top: 24px;
-      font-style: italic;
+      text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 24px; font-style: italic;
     }
 
     footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; font-size: 0.85rem; color: var(--text-muted); }
     footer a { color: #888; text-decoration: none; }
 
-    @media (max-width: 640px) {
-      .hero { padding: 60px 0 40px; }
-    }
+    @media (max-width: 640px) { .hero { padding: 60px 0 40px; } }
   </style>
 </head>
 <body>
@@ -202,110 +179,183 @@
   <section class="hero">
     <div class="container">
       <div class="hero-badge">📋 Free Sample</div>
-      <h1>Here's what your weekly report looks like</h1>
-      <p>Real format, real columns, placeholder data. This is exactly what lands in your inbox every week — a clean CSV you can import anywhere.</p>
+      <h1>Here's what your Monday report looks like</h1>
+      <p>Real format, real columns, placeholder data. This is exactly what lands in your inbox every Monday — a clean CSV of every founder who raised capital the previous week.</p>
     </div>
   </section>
 
   <section class="sample-section">
     <div class="container">
-      <div class="sample-label">Sample Report — SaaS Founders, Series A-B, US</div>
+      <div class="sample-label">Sample Report — Week of Feb 10, 2026</div>
       <div class="table-wrapper">
         <table>
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Title</th>
-              <th>Company</th>
+              <th>Full Name</th>
+              <th>First</th>
+              <th>Last</th>
               <th>Email</th>
-              <th>Phone</th>
-              <th>Location</th>
-              <th>Signal</th>
+              <th>LinkedIn</th>
+              <th>Position</th>
+              <th>Company</th>
+              <th>Industry</th>
+              <th>HQ</th>
+              <th>Country</th>
+              <th>Employees</th>
+              <th>Last Funding</th>
+              <th>Amount</th>
+              <th>Type</th>
+              <th>Total Raised</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>Sarah Chen</td>
+              <td>Sarah</td>
+              <td>Chen</td>
+              <td>sarah@datapulse.io</td>
+              <td style="color:var(--accent-light);">linkedin.com/in/sarachen</td>
               <td>CEO & Co-Founder</td>
               <td>DataPulse</td>
-              <td>sarah@datapulse.io</td>
-              <td>(415) 555-0142</td>
+              <td>AI / Machine Learning</td>
               <td>San Francisco, CA</td>
-              <td><span class="signal-tag green">Series B — $18M</span></td>
+              <td>US</td>
+              <td>45</td>
+              <td>Feb 8, 2026</td>
+              <td><span class="funding-tag">$18M</span></td>
+              <td>Series B</td>
+              <td>$24.5M</td>
             </tr>
             <tr>
               <td>James Rodriguez</td>
-              <td>VP Sales</td>
+              <td>James</td>
+              <td>Rodriguez</td>
+              <td>james@cloudreach.com</td>
+              <td style="color:var(--accent-light);">linkedin.com/in/jrodriguez</td>
+              <td>Founder</td>
               <td>CloudReach</td>
-              <td>j.rodriguez@cloudreach.com</td>
-              <td>(512) 555-0198</td>
+              <td>Cloud Infrastructure</td>
               <td>Austin, TX</td>
-              <td><span class="signal-tag">Hiring 3 SDRs</span></td>
+              <td>US</td>
+              <td>22</td>
+              <td>Feb 7, 2026</td>
+              <td><span class="funding-tag">$6M</span></td>
+              <td>Series A</td>
+              <td>$8.2M</td>
             </tr>
             <tr>
               <td>Priya Patel</td>
-              <td>Founder</td>
+              <td>Priya</td>
+              <td>Patel</td>
+              <td>priya@nexgen.co</td>
+              <td style="color:var(--accent-light);">linkedin.com/in/priyapatel</td>
+              <td>Founder & CEO</td>
               <td>NexGen Analytics</td>
-              <td>priya@nexgenanalytics.co</td>
-              <td>(646) 555-0234</td>
+              <td>Data Analytics</td>
               <td>New York, NY</td>
-              <td><span class="signal-tag amber">New product launch</span></td>
+              <td>US</td>
+              <td>12</td>
+              <td>Feb 10, 2026</td>
+              <td><span class="funding-tag">$3.2M</span></td>
+              <td>Seed</td>
+              <td>$3.2M</td>
             </tr>
             <tr>
-              <td>Michael Torres</td>
-              <td>CRO</td>
-              <td>ScaleStack</td>
-              <td>mtorres@scalestack.io</td>
-              <td>(303) 555-0167</td>
-              <td>Denver, CO</td>
-              <td><span class="signal-tag green">Series A — $8M</span></td>
+              <td>Lars Eriksson</td>
+              <td>Lars</td>
+              <td>Eriksson</td>
+              <td>lars@greenfleet.eu</td>
+              <td style="color:var(--accent-light);">linkedin.com/in/larseriksson</td>
+              <td>Co-Founder</td>
+              <td>GreenFleet</td>
+              <td>CleanTech / Logistics</td>
+              <td>Stockholm</td>
+              <td>Sweden</td>
+              <td>38</td>
+              <td>Feb 9, 2026</td>
+              <td><span class="funding-tag">$12M</span></td>
+              <td>Series A</td>
+              <td>$14.8M</td>
             </tr>
             <tr>
-              <td>Lisa Wang</td>
+              <td>Maria Santos</td>
+              <td>Maria</td>
+              <td>Santos</td>
+              <td>maria@paybridge.io</td>
+              <td style="color:var(--accent-light);">linkedin.com/in/mariasantos</td>
               <td>CEO</td>
-              <td>BrightPath AI</td>
-              <td>lisa@brightpath.ai</td>
-              <td>(206) 555-0189</td>
-              <td>Seattle, WA</td>
-              <td><span class="signal-tag">Expanded to EU</span></td>
+              <td>PayBridge</td>
+              <td>FinTech</td>
+              <td>São Paulo</td>
+              <td>Brazil</td>
+              <td>65</td>
+              <td>Feb 6, 2026</td>
+              <td><span class="funding-tag">$25M</span></td>
+              <td>Series B</td>
+              <td>$32M</td>
             </tr>
             <tr class="blurred-row">
               <td>Alex Mercer</td>
-              <td>Head of Growth</td>
-              <td>Flowmatic</td>
+              <td>Alex</td>
+              <td>Mercer</td>
               <td>alex@flowmatic.com</td>
-              <td>(312) 555-0211</td>
+              <td>linkedin.com/in/amercer</td>
+              <td>Founder</td>
+              <td>Flowmatic</td>
+              <td>Marketing Tech</td>
               <td>Chicago, IL</td>
-              <td><span class="signal-tag">Hiring VP Sales</span></td>
+              <td>US</td>
+              <td>18</td>
+              <td>Feb 7, 2026</td>
+              <td>$4.5M</td>
+              <td>Seed</td>
+              <td>$4.5M</td>
             </tr>
             <tr class="blurred-row">
               <td>Nina Kowalski</td>
-              <td>Founder & CEO</td>
-              <td>LoopSync</td>
+              <td>Nina</td>
+              <td>Kowalski</td>
               <td>nina@loopsync.io</td>
-              <td>(617) 555-0145</td>
+              <td>linkedin.com/in/ninak</td>
+              <td>CEO</td>
+              <td>LoopSync</td>
+              <td>DevOps</td>
               <td>Boston, MA</td>
-              <td><span class="signal-tag green">Series A — $12M</span></td>
+              <td>US</td>
+              <td>31</td>
+              <td>Feb 10, 2026</td>
+              <td>$9M</td>
+              <td>Series A</td>
+              <td>$11.5M</td>
             </tr>
             <tr class="blurred-row">
-              <td>David Kim</td>
-              <td>VP Marketing</td>
-              <td>Stratify</td>
-              <td>dkim@stratify.co</td>
-              <td>(404) 555-0178</td>
-              <td>Atlanta, GA</td>
-              <td><span class="signal-tag amber">New CMS migration</span></td>
+              <td>Kenji Tanaka</td>
+              <td>Kenji</td>
+              <td>Tanaka</td>
+              <td>kenji@aerobot.jp</td>
+              <td>linkedin.com/in/kenjit</td>
+              <td>Founder</td>
+              <td>AeroBot</td>
+              <td>Robotics</td>
+              <td>Tokyo</td>
+              <td>Japan</td>
+              <td>52</td>
+              <td>Feb 8, 2026</td>
+              <td>$15M</td>
+              <td>Series B</td>
+              <td>$22M</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p class="note">Showing 5 of 75+ leads. Actual reports are delivered as downloadable CSV files.</p>
+      <p class="scroll-hint">← Scroll to see all columns →</p>
+      <p class="note">Showing 5 of 150+ founders from this week. Actual reports include all 18 columns as a downloadable CSV.</p>
 
       <div class="callout">
-        <h2>Want this for your ICP?</h2>
-        <p>Book a 15-minute call and we'll define your targeting together. Your first report ships within the week.</p>
+        <h2>Get this every Monday</h2>
+        <p>Every founder who raised capital last week. In your inbox. Ready to outreach.</p>
         <a href="/book" class="btn-primary">
-          Start for $149/mo
+          Subscribe — $149/mo
           <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </a>
       </div>
