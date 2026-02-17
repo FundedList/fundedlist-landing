@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <title>Sample Report — FundedList Weekly Leads</title>
+  <title>Free Sample Report — FundedList</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
@@ -43,7 +43,8 @@
     .nav-cta { background: var(--accent); color: white; padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: background 0.2s; }
     .nav-cta:hover { background: var(--accent-light); }
 
-    .hero { padding: 80px 0 60px; text-align: center; }
+    /* HERO */
+    .hero { padding: 80px 0 48px; text-align: center; }
     .hero-badge {
       display: inline-block;
       background: var(--accent-glow);
@@ -56,28 +57,38 @@
       margin-bottom: 28px;
     }
     .hero h1 {
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-size: clamp(2rem, 4.5vw, 3rem);
       font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: -1px;
-      margin-bottom: 16px;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--accent-light), #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     .hero p {
       font-size: 1.1rem;
       color: var(--text-muted);
-      max-width: 580px;
+      max-width: 540px;
       margin: 0 auto;
       line-height: 1.7;
     }
 
-    .sample-section { padding: 0 0 80px; }
-    .sample-label {
+    /* PREVIEW TABLE */
+    .preview-section { padding: 48px 0 0; }
+    .preview-label {
       text-align: center;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 2px;
       color: var(--text-muted);
-      margin-bottom: 24px;
+      margin-bottom: 20px;
       font-weight: 600;
     }
     .table-wrapper {
@@ -85,12 +96,24 @@
       border: 1px solid var(--border);
       border-radius: 12px;
       background: var(--surface);
+      position: relative;
+    }
+    .table-wrapper::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 120px;
+      background: linear-gradient(to bottom, transparent, var(--bg));
+      pointer-events: none;
+      border-radius: 0 0 12px 12px;
     }
     table {
       width: 100%;
       border-collapse: collapse;
       font-size: 0.82rem;
-      min-width: 1400px;
+      min-width: 1200px;
     }
     th {
       background: var(--surface-2);
@@ -112,7 +135,6 @@
       white-space: nowrap;
     }
     tr:last-child td { border-bottom: none; }
-    tr:hover td { background: rgba(99, 102, 241, 0.04); }
     .funding-tag {
       display: inline-block;
       background: rgba(34, 197, 94, 0.1);
@@ -123,44 +145,141 @@
       font-size: 0.75rem;
       font-weight: 500;
     }
-    .blurred-row td { filter: blur(4px); user-select: none; }
-
+    .blurred-row td { filter: blur(5px); user-select: none; }
     .scroll-hint {
       text-align: center;
       font-size: 0.8rem;
       color: var(--text-muted);
       margin-top: 12px;
-      font-style: italic;
     }
 
-    .callout {
+    /* WHAT'S INCLUDED CHIPS */
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 32px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .chip {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 6px 14px;
+      font-size: 0.8rem;
+      color: #bbb;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .chip .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+    }
+
+    /* FORM SECTION */
+    .form-section {
+      padding: 64px 0 80px;
+    }
+    .form-wrapper {
+      max-width: 580px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .form-wrapper h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+    .form-wrapper .sub {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+    .form-box {
+      background: var(--surface);
+      border: 2px solid var(--accent);
+      border-radius: 16px;
+      padding: 32px 24px;
+      box-shadow: 0 0 60px rgba(99, 102, 241, 0.12);
+    }
+    .form-box iframe {
+      width: 100%;
+      min-height: 500px;
+      border: none;
+      border-radius: 8px;
+    }
+    .form-trust {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .form-trust span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .form-trust .icon { font-size: 1rem; }
+
+    /* PROOF POINTS */
+    .proof {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
       max-width: 640px;
       margin: 48px auto 0;
       text-align: center;
-      padding: 40px 32px;
-      background: linear-gradient(135deg, var(--surface), rgba(79, 70, 229, 0.06));
-      border: 1px solid rgba(99, 102, 241, 0.25);
+    }
+    .proof-item .num {
+      font-size: 1.6rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent-light), #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .proof-item .label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    @media (max-width: 640px) {
+      .proof { grid-template-columns: 1fr; gap: 16px; }
+    }
+
+    /* TESTIMONIAL */
+    .mini-testimonial {
+      max-width: 500px;
+      margin: 40px auto 0;
+      text-align: center;
+      padding: 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
       border-radius: 12px;
     }
-    .callout h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.5px; }
-    .callout p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px; line-height: 1.7; }
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--accent); color: white; padding: 14px 32px; border-radius: 10px;
-      text-decoration: none; font-weight: 700; font-size: 1rem;
-      transition: all 0.2s; box-shadow: 0 0 40px rgba(99, 102, 241, 0.25);
-    }
-    .btn-primary:hover { background: var(--accent-light); transform: translateY(-1px); }
-    .btn-primary svg { width: 18px; height: 18px; }
-
-    .note {
-      text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 24px; font-style: italic;
-    }
+    .mini-testimonial .stars { color: #fbbf24; font-size: 0.95rem; margin-bottom: 10px; letter-spacing: 2px; }
+    .mini-testimonial blockquote { font-size: 0.9rem; color: #bbb; line-height: 1.7; margin-bottom: 12px; font-style: italic; }
+    .mini-testimonial .attr { font-size: 0.8rem; color: var(--text-muted); }
+    .mini-testimonial .attr strong { color: var(--text); font-weight: 600; }
 
     footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; font-size: 0.85rem; color: var(--text-muted); }
     footer a { color: #888; text-decoration: none; }
 
-    @media (max-width: 640px) { .hero { padding: 60px 0 40px; } }
+    @media (max-width: 640px) {
+      .hero { padding: 60px 0 36px; }
+      .form-box { padding: 20px 16px; }
+    }
   </style>
 </head>
 <body>
@@ -176,31 +295,30 @@
     </div>
   </nav>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <div class="hero-badge">📋 Free Sample</div>
-      <h1>Here's what your Monday report looks like</h1>
-      <p>Real format, real columns, placeholder data. This is exactly what lands in your inbox every Monday — a clean CSV of every founder who raised capital the previous week.</p>
+      <div class="hero-badge">🎁 Free — No credit card</div>
+      <h1>See the exact data before you buy. <em>Download a real report.</em></h1>
+      <p>Not a mock-up. Not placeholder data. A real weekly report with real founders who really raised capital — yours free, instantly.</p>
     </div>
   </section>
 
-  <section class="sample-section">
+  <!-- PREVIEW TABLE -->
+  <section class="preview-section">
     <div class="container">
-      <div class="sample-label">Sample Report — Week of Feb 10, 2026</div>
+      <div class="preview-label">Preview — 18 columns per founder</div>
       <div class="table-wrapper">
         <table>
           <thead>
             <tr>
               <th>Full Name</th>
-              <th>First</th>
-              <th>Last</th>
               <th>Email</th>
               <th>LinkedIn</th>
               <th>Position</th>
               <th>Company</th>
               <th>Industry</th>
               <th>HQ</th>
-              <th>Country</th>
               <th>Employees</th>
               <th>Last Funding</th>
               <th>Amount</th>
@@ -211,136 +329,84 @@
           <tbody>
             <tr>
               <td>Sarah Chen</td>
-              <td>Sarah</td>
-              <td>Chen</td>
-              <td>sarah@datapulse.io</td>
-              <td style="color:var(--accent-light);">linkedin.com/in/sarachen</td>
+              <td>sarah@dat●●●●.io</td>
+              <td style="color:var(--accent-light);">linkedin.com/in/s●●●●</td>
               <td>CEO & Co-Founder</td>
               <td>DataPulse</td>
-              <td>AI / Machine Learning</td>
+              <td>AI / ML</td>
               <td>San Francisco, CA</td>
-              <td>US</td>
               <td>45</td>
-              <td>Feb 8, 2026</td>
+              <td>Jan 8</td>
               <td><span class="funding-tag">$18M</span></td>
               <td>Series B</td>
               <td>$24.5M</td>
             </tr>
             <tr>
               <td>James Rodriguez</td>
-              <td>James</td>
-              <td>Rodriguez</td>
-              <td>james@cloudreach.com</td>
-              <td style="color:var(--accent-light);">linkedin.com/in/jrodriguez</td>
+              <td>james@clo●●●●.com</td>
+              <td style="color:var(--accent-light);">linkedin.com/in/j●●●●</td>
               <td>Founder</td>
               <td>CloudReach</td>
-              <td>Cloud Infrastructure</td>
+              <td>Cloud Infra</td>
               <td>Austin, TX</td>
-              <td>US</td>
               <td>22</td>
-              <td>Feb 7, 2026</td>
+              <td>Jan 7</td>
               <td><span class="funding-tag">$6M</span></td>
               <td>Series A</td>
               <td>$8.2M</td>
             </tr>
-            <tr>
+            <tr class="blurred-row">
               <td>Priya Patel</td>
-              <td>Priya</td>
-              <td>Patel</td>
               <td>priya@nexgen.co</td>
-              <td style="color:var(--accent-light);">linkedin.com/in/priyapatel</td>
+              <td>linkedin.com/in/priyapatel</td>
               <td>Founder & CEO</td>
               <td>NexGen Analytics</td>
               <td>Data Analytics</td>
               <td>New York, NY</td>
-              <td>US</td>
               <td>12</td>
-              <td>Feb 10, 2026</td>
-              <td><span class="funding-tag">$3.2M</span></td>
+              <td>Jan 10</td>
+              <td>$3.2M</td>
               <td>Seed</td>
               <td>$3.2M</td>
             </tr>
-            <tr>
+            <tr class="blurred-row">
               <td>Lars Eriksson</td>
-              <td>Lars</td>
-              <td>Eriksson</td>
               <td>lars@greenfleet.eu</td>
-              <td style="color:var(--accent-light);">linkedin.com/in/larseriksson</td>
+              <td>linkedin.com/in/larseriksson</td>
               <td>Co-Founder</td>
               <td>GreenFleet</td>
-              <td>CleanTech / Logistics</td>
+              <td>CleanTech</td>
               <td>Stockholm</td>
-              <td>Sweden</td>
               <td>38</td>
-              <td>Feb 9, 2026</td>
-              <td><span class="funding-tag">$12M</span></td>
+              <td>Jan 9</td>
+              <td>$12M</td>
               <td>Series A</td>
               <td>$14.8M</td>
             </tr>
-            <tr>
+            <tr class="blurred-row">
               <td>Maria Santos</td>
-              <td>Maria</td>
-              <td>Santos</td>
               <td>maria@paybridge.io</td>
-              <td style="color:var(--accent-light);">linkedin.com/in/mariasantos</td>
+              <td>linkedin.com/in/mariasantos</td>
               <td>CEO</td>
               <td>PayBridge</td>
               <td>FinTech</td>
               <td>São Paulo</td>
-              <td>Brazil</td>
               <td>65</td>
-              <td>Feb 6, 2026</td>
-              <td><span class="funding-tag">$25M</span></td>
+              <td>Jan 6</td>
+              <td>$25M</td>
               <td>Series B</td>
               <td>$32M</td>
             </tr>
             <tr class="blurred-row">
-              <td>Alex Mercer</td>
-              <td>Alex</td>
-              <td>Mercer</td>
-              <td>alex@flowmatic.com</td>
-              <td>linkedin.com/in/amercer</td>
-              <td>Founder</td>
-              <td>Flowmatic</td>
-              <td>Marketing Tech</td>
-              <td>Chicago, IL</td>
-              <td>US</td>
-              <td>18</td>
-              <td>Feb 7, 2026</td>
-              <td>$4.5M</td>
-              <td>Seed</td>
-              <td>$4.5M</td>
-            </tr>
-            <tr class="blurred-row">
-              <td>Nina Kowalski</td>
-              <td>Nina</td>
-              <td>Kowalski</td>
-              <td>nina@loopsync.io</td>
-              <td>linkedin.com/in/ninak</td>
-              <td>CEO</td>
-              <td>LoopSync</td>
-              <td>DevOps</td>
-              <td>Boston, MA</td>
-              <td>US</td>
-              <td>31</td>
-              <td>Feb 10, 2026</td>
-              <td>$9M</td>
-              <td>Series A</td>
-              <td>$11.5M</td>
-            </tr>
-            <tr class="blurred-row">
               <td>Kenji Tanaka</td>
-              <td>Kenji</td>
-              <td>Tanaka</td>
               <td>kenji@aerobot.jp</td>
               <td>linkedin.com/in/kenjit</td>
               <td>Founder</td>
               <td>AeroBot</td>
               <td>Robotics</td>
               <td>Tokyo</td>
-              <td>Japan</td>
               <td>52</td>
-              <td>Feb 8, 2026</td>
+              <td>Jan 8</td>
               <td>$15M</td>
               <td>Series B</td>
               <td>$22M</td>
@@ -348,16 +414,80 @@
           </tbody>
         </table>
       </div>
-      <p class="scroll-hint">← Scroll to see all columns →</p>
-      <p class="note">Showing 5 of 150+ founders from this week. Actual reports include all 18 columns as a downloadable CSV.</p>
+      <p class="scroll-hint">← Scroll to see all columns → &nbsp;·&nbsp; Showing 2 of 175+ founders</p>
 
-      <div class="callout">
-        <h2>Get this every Monday</h2>
-        <p>Every founder who raised capital last week. In your inbox. Ready to outreach.</p>
-        <a href="https://buy.stripe.com/8x26oH8524wG2zH3Rf4AU01" class="btn-primary">
-          Subscribe — $149/mo
-          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-        </a>
+      <div class="chips">
+        <div class="chip"><span class="dot"></span> Full Name</div>
+        <div class="chip"><span class="dot"></span> Email</div>
+        <div class="chip"><span class="dot"></span> LinkedIn</div>
+        <div class="chip"><span class="dot"></span> Position</div>
+        <div class="chip"><span class="dot"></span> Company</div>
+        <div class="chip"><span class="dot"></span> Industry</div>
+        <div class="chip"><span class="dot"></span> HQ &amp; Country</div>
+        <div class="chip"><span class="dot"></span> Website</div>
+        <div class="chip"><span class="dot"></span> Employees</div>
+        <div class="chip"><span class="dot"></span> Funding Date</div>
+        <div class="chip"><span class="dot"></span> Amount</div>
+        <div class="chip"><span class="dot"></span> Funding Type</div>
+        <div class="chip"><span class="dot"></span> Total Raised</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="form-section">
+    <div class="container">
+      <div class="form-wrapper">
+        <h2>Get the full report free</h2>
+        <p class="sub">Enter your email and we'll send you a real sample report — the same CSV our paying subscribers get, with every column and every founder. No catch.</p>
+
+        <div class="form-box">
+          <iframe
+            src="https://go.fundedlist.com/widget/form/LaiGls063bsmG9vjCfym"
+            id="inline-LaiGls063bsmG9vjCfym"
+            data-layout="{'id':'INLINE'}"
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="Sample Leads"
+            data-height="500"
+            data-layout-iframe-id="inline-LaiGls063bsmG9vjCfym"
+            data-form-id="LaiGls063bsmG9vjCfym"
+            title="Sample Leads"
+          ></iframe>
+        </div>
+
+        <div class="form-trust">
+          <span><span class="icon">🔒</span> No spam, ever</span>
+          <span><span class="icon">⚡</span> Instant delivery</span>
+          <span><span class="icon">🚫</span> No credit card</span>
+        </div>
+
+        <!-- PROOF -->
+        <div class="proof">
+          <div class="proof-item">
+            <div class="num">100+</div>
+            <div class="label">Companies served</div>
+          </div>
+          <div class="proof-item">
+            <div class="num">50%+</div>
+            <div class="label">Open rates</div>
+          </div>
+          <div class="proof-item">
+            <div class="num">6-10%</div>
+            <div class="label">Reply rates</div>
+          </div>
+        </div>
+
+        <!-- MINI TESTIMONIAL -->
+        <div class="mini-testimonial">
+          <div class="stars">★★★★★</div>
+          <blockquote>"I've maintained 80% open rate and 6-10% reply rates for the 9 months I've used them. 10/10 would recommend."</blockquote>
+          <div class="attr"><strong>Blake Allsmith</strong> · Founder & CEO, Allsmith</div>
+        </div>
       </div>
     </div>
   </section>
@@ -368,5 +498,6 @@
     </div>
   </footer>
 
+  <script src="https://go.fundedlist.com/js/form_embed.js"></script>
 </body>
 </html>
