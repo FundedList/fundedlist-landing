@@ -1,0 +1,152 @@
+---
+layout: false
+permalink: /blog/index.html
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <title>Blog — FundedList</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0a0a0a;
+      --surface: #141414;
+      --border: #2a2a2a;
+      --text: #f5f5f5;
+      --text-muted: #888;
+      --accent: #4f46e5;
+      --accent-light: #6366f1;
+      --accent-glow: rgba(99, 102, 241, 0.15);
+    }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    nav { padding: 20px 0; border-bottom: 1px solid var(--border); }
+    nav .container { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.5px; text-decoration: none; color: var(--text); }
+    .logo span { color: var(--accent-light); }
+    .nav-links { display: flex; align-items: center; gap: 16px; }
+    .nav-link { color: var(--text-muted); text-decoration: none; font-size: 13px; font-weight: 500; transition: color .2s; white-space: nowrap; }
+    .nav-link:hover { color: var(--text); }
+    .nav-cta { background: var(--accent); color: white; padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--accent-light); }
+
+    .hero { padding: 80px 0 60px; text-align: center; }
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+    .hero p { color: var(--text-muted); font-size: 1.1rem; max-width: 480px; margin: 0 auto; }
+
+    .posts { padding: 0 0 100px; }
+    .post-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .post-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .post-card:hover {
+      border-color: var(--accent-light);
+      transform: translateY(-2px);
+    }
+    .post-card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 1px solid var(--border);
+    }
+    .post-card-body { padding: 24px; }
+    .post-card-date { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 8px; }
+    .post-card-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.3px; line-height: 1.3; }
+    .post-card-excerpt { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+    .post-card-read {
+      display: inline-block;
+      margin-top: 16px;
+      font-size: 0.85rem;
+      color: var(--accent-light);
+      font-weight: 600;
+    }
+
+    .empty { text-align: center; padding: 60px 0; color: var(--text-muted); font-size: 1rem; }
+
+    footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; font-size: 0.85rem; color: var(--text-muted); }
+    footer a { color: #888; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <a href="/" class="logo">Funded<span>List</span></a>
+      <div class="nav-links">
+        <a href="/blog/" class="nav-link">Blog</a>
+        <a href="/weekly-report/" class="nav-link">Weekly Report</a>
+        <a href="/insurance-ma/" class="nav-link">M&A Intel</a>
+        <a href="/book" class="nav-cta">Book a Call</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Blog</h1>
+      <p>Outbound tactics, lead gen insights, and what's working right now.</p>
+    </div>
+  </section>
+
+  <section class="posts">
+    <div class="container">
+      <div class="post-grid">
+        {% set posts = collections.posts %}
+        {% if posts.length == 0 %}
+        <div class="empty">Coming soon — first post dropping shortly.</div>
+        {% endif %}
+        {% for post in posts %}
+        <a href="{{ post.url }}" class="post-card">
+          {% if post.data.image %}<img class="post-card-img" src="{{ post.data.image }}" alt="{{ post.data.title }}">{% endif %}
+          <div class="post-card-body">
+            <div class="post-card-date">{{ post.date | readableDate }}</div>
+            <div class="post-card-title">{{ post.data.title }}</div>
+            <div class="post-card-excerpt">{{ post.data.description or post.content | excerpt }}</div>
+            <span class="post-card-read">Read more →</span>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 FundedList. Built in St. Louis. · <a href="/privacy-policy">Privacy Policy</a> · <a href="/terms-of-service">Terms of Service</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>

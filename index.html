@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -532,6 +533,7 @@
     <div class="container">
       <div class="logo">Funded<span>List</span></div>
       <div style="display:flex;align-items:center;gap:16px;">
+        <a href="/blog/" style="color:var(--text-muted);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s;white-space:nowrap;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text-muted)'">Blog</a>
         <a href="/weekly-report/" style="color:var(--text-muted);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s;white-space:nowrap;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text-muted)'">Weekly Report</a>
         <a href="/insurance-ma/" style="color:var(--text-muted);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s;white-space:nowrap;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text-muted)'">M&amp;A Intel</a>
         <a href="/book" class="nav-cta">Book a Call</a>
@@ -789,6 +791,13 @@
       }
       requestAnimationFrame(f);
     }();
+  </script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) window.netlifyIdentity.on("login", () => document.location.href = "/admin/");
+      });
+    }
   </script>
 </body>
 </html>
