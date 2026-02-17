@@ -12,18 +12,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     :root {
       --bg: #0a0a0a;
       --surface: #141414;
-      --surface-2: #1a1a1a;
       --border: #2a2a2a;
       --text: #f5f5f5;
       --text-muted: #888;
       --accent: #4f46e5;
       --accent-light: #6366f1;
     }
-
     body {
       font-family: 'Inter', -apple-system, sans-serif;
       background: var(--bg);
@@ -31,133 +28,53 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* NAV */
-    nav {
-      padding: 20px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    nav .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--text);
-      text-decoration: none;
-    }
+    .container { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+    nav { padding: 20px 0; border-bottom: 1px solid var(--border); }
+    nav .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.5px; text-decoration: none; color: var(--text); }
     .logo span { color: var(--accent-light); }
-    nav a.back-link {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.2s;
-    }
-    nav a.back-link:hover { color: var(--text); }
+    .nav-links { display: flex; align-items: center; gap: 16px; }
+    .nav-link { color: var(--text-muted); text-decoration: none; font-size: 13px; font-weight: 500; transition: color .2s; white-space: nowrap; }
+    .nav-link:hover { color: var(--text); }
+    .nav-cta { background: var(--accent); color: white; padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--accent-light); }
 
-    /* CONTENT */
-    .policy {
-      padding: 60px 0 80px;
-    }
-    .policy h1 {
-      font-size: 2rem;
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
-    .policy .subtitle {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 12px;
-    }
-    .policy .effective {
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      margin-bottom: 48px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid var(--border);
-    }
-    .policy h2 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-top: 40px;
-      margin-bottom: 16px;
-      color: var(--text);
-    }
-    .policy h3 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin-top: 28px;
-      margin-bottom: 12px;
-      color: var(--text);
-    }
-    .policy p {
-      color: #ccc;
-      margin-bottom: 16px;
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
-    .policy ul {
-      margin: 0 0 16px 24px;
-      color: #ccc;
-      font-size: 0.95rem;
-      line-height: 1.8;
-    }
-    .policy li {
-      margin-bottom: 6px;
-    }
-    .policy strong {
-      color: var(--text);
-      font-weight: 600;
-    }
-    .policy a {
-      color: var(--accent-light);
-      text-decoration: none;
-    }
-    .policy a:hover {
-      text-decoration: underline;
-    }
+    .content { padding: 80px 0 100px; }
+    .content h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 8px; }
+    .subtitle { color: var(--text-muted); font-size: 1rem; margin-bottom: 8px; }
+    .effective { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 48px; }
+    .content h2 { font-size: 1.25rem; font-weight: 700; margin-top: 48px; margin-bottom: 16px; letter-spacing: -0.3px; }
+    .content h3 { font-size: 1.05rem; font-weight: 600; margin-top: 32px; margin-bottom: 12px; }
+    .content p { color: #ccc; font-size: 0.95rem; line-height: 1.8; margin-bottom: 16px; }
+    .content ul { color: #ccc; font-size: 0.95rem; line-height: 1.8; margin-bottom: 16px; padding-left: 24px; }
+    .content ul li { margin-bottom: 8px; }
+    .content a { color: var(--accent-light); text-decoration: none; }
+    .content a:hover { text-decoration: underline; }
+    .content strong { color: var(--text); }
 
-    /* FOOTER */
-    footer {
-      padding: 40px 0;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-    footer a {
-      color: var(--text-muted);
-      text-decoration: none;
-    }
-    footer a:hover {
-      color: var(--text);
-    }
+    footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; font-size: 0.85rem; color: var(--text-muted); }
+    footer a { color: #888; text-decoration: none; }
 
     @media (max-width: 640px) {
-      .policy { padding: 40px 0 60px; }
-      .policy h1 { font-size: 1.6rem; }
-      .policy h2 { font-size: 1.15rem; }
+      .content { padding: 60px 0 80px; }
+      .content h1 { font-size: 1.8rem; }
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <div class="container">
+    <div class="wrap">
       <a href="/" class="logo">Funded<span>List</span></a>
-      <a href="/" class="back-link">← Back to Home</a>
+      <div class="nav-links">
+        <a href="/weekly-report/" class="nav-link">Weekly Report</a>
+        <a href="/insurance-ma/" class="nav-link">M&A Intel</a>
+        <a href="/book" class="nav-cta">Book a Call</a>
+      </div>
     </div>
   </nav>
 
-  <section class="policy">
+  <div class="content">
     <div class="container">
       <h1>Privacy Policy</h1>
       <p class="subtitle">FundedList — a service of Wints LLC</p>
@@ -169,12 +86,10 @@
 
       <h2>2. Business Contact Information</h2>
       <p>FundedList is owned and operated by:</p>
-      <p>
-        <strong>Wints LLC</strong><br>
-        St. Louis, Missouri<br>
-        Email: <a href="mailto:support@fundedlist.com">support@fundedlist.com</a><br>
-        Website: <a href="https://fundedlist.com">https://fundedlist.com</a>
-      </p>
+      <p><strong>Wints LLC</strong><br>
+      St. Louis, Missouri<br>
+      Email: <a href="mailto:support@fundedlist.com">support@fundedlist.com</a><br>
+      Website: <a href="https://fundedlist.com">https://fundedlist.com</a></p>
 
       <h2>3. Information We Collect</h2>
       <p>We may collect the following types of personal information:</p>
@@ -193,9 +108,7 @@
       </ul>
 
       <h3>3.3 Information from Third Parties</h3>
-      <ul>
-        <li>We may receive publicly available business information from third-party data providers to support our lead generation services.</li>
-      </ul>
+      <p>We may receive publicly available business information from third-party data providers to support our lead generation services.</p>
       <p><strong>Important:</strong> We do not purchase, rent, or acquire consumer contact lists from third-party list brokers for the purpose of sending unsolicited communications. All contacts in our communications are obtained through legitimate opt-in methods or publicly available business information.</p>
 
       <h2>4. How We Use Your Information</h2>
@@ -238,7 +151,7 @@
       <h3>5.5 Opt-Out / STOP Instructions</h3>
       <p>You may opt out of communications at any time:</p>
       <ul>
-        <li><strong>SMS/Text:</strong> Reply STOP to any text message to unsubscribe from future texts. You will receive a one-time confirmation message.</li>
+        <li><strong>SMS/Text:</strong> Reply <strong>STOP</strong> to any text message to unsubscribe from future texts. You will receive a one-time confirmation message.</li>
         <li><strong>Email:</strong> Click the "Unsubscribe" link at the bottom of any marketing email.</li>
         <li><strong>Phone:</strong> Request removal from our call list during any phone conversation or by emailing us at <a href="mailto:support@fundedlist.com">support@fundedlist.com</a>.</li>
       </ul>
@@ -246,7 +159,7 @@
       <h3>5.6 HELP / Support</h3>
       <p>For assistance with our messaging program:</p>
       <ul>
-        <li><strong>SMS/Text:</strong> Reply HELP to any text message for support information.</li>
+        <li><strong>SMS/Text:</strong> Reply <strong>HELP</strong> to any text message for support information.</li>
         <li><strong>Email:</strong> Contact us at <a href="mailto:support@fundedlist.com">support@fundedlist.com</a>.</li>
         <li><strong>Phone:</strong> Call or text us at the number provided on our website.</li>
       </ul>
@@ -256,6 +169,10 @@
 
       <h3>5.8 Consent is Not a Condition of Purchase</h3>
       <p>Providing consent to receive marketing messages is not a condition of purchasing any product or service from FundedList.</p>
+
+      <h3>5.9 Mobile Information Sharing</h3>
+      <p>We do not share, sell, rent, or disclose any mobile information — including mobile phone numbers, opt-in data, or any information collected through our SMS/text messaging program — with third parties or affiliates for their own marketing or promotional purposes.</p>
+      <p>Mobile information is used solely by FundedList (Wints LLC) to deliver the messaging services you have consented to receive.</p>
 
       <h2>6. How We Share Your Information</h2>
       <p>We do not sell your personal information. We may share your information only in the following circumstances:</p>
@@ -295,17 +212,15 @@
 
       <h2>14. Contact Us</h2>
       <p>If you have questions or concerns about this Privacy Policy, please contact us:</p>
-      <p>
-        <strong>FundedList — Wints LLC</strong><br>
-        Email: <a href="mailto:support@fundedlist.com">support@fundedlist.com</a><br>
-        Website: <a href="https://fundedlist.com">https://fundedlist.com</a>
-      </p>
+      <p><strong>FundedList — Wints LLC</strong><br>
+      Email: <a href="mailto:support@fundedlist.com">support@fundedlist.com</a><br>
+      Website: <a href="https://fundedlist.com">https://fundedlist.com</a></p>
     </div>
-  </section>
+  </div>
 
   <footer>
     <div class="container">
-      <p>© 2026 FundedList. Built in St. Louis. Powered by fruit and AI. · <a href="/privacy-policy">Privacy Policy</a> · <a href="/terms-of-service">Terms of Service</a></p>
+      <p>© 2026 FundedList. Built in St. Louis. · <a href="/privacy-policy">Privacy Policy</a> · <a href="/terms-of-service">Terms of Service</a></p>
     </div>
   </footer>
 
