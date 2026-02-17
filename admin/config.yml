@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: FundedList/fundedlist-landing
   branch: main
 
 media_folder: "img/blog"
