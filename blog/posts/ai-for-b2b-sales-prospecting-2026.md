@@ -9,7 +9,6 @@ tags:
   - outbound
   - tools
 image: /img/blog/ai-sales-prospecting.png
-draft: true
 ---
 
 Every sales tool now has "AI" in the pitch. AI writes your emails. AI finds your leads. AI books your meetings. AI does your laundry.
