@@ -9,7 +9,6 @@ tags:
   - templates
   - deliverability
 image: /img/blog/cold-email-playbook.png
-draft: true
 ---
 
 Cold email isn't dead. Bad cold email is dead.
