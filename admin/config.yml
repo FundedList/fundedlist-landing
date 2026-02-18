@@ -3,6 +3,8 @@ backend:
   repo: FundedList/fundedlist-landing
   branch: main
 
+publish_mode: editorial_workflow
+
 media_folder: "img/blog"
 public_folder: "/img/blog"
 
@@ -19,4 +21,5 @@ collections:
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Featured Image", name: "image", widget: "image", required: false }
       - { label: "Tags", name: "tags", widget: "list", required: false, hint: "Comma-separated tags" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true, required: false, hint: "Set to false to publish" }
       - { label: "Body", name: "body", widget: "markdown" }

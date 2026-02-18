@@ -9,9 +9,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("robots.txt");
 
-  // Blog collection sorted by date descending
+  // Blog collection sorted by date descending (excludes drafts in production)
   eleventyConfig.addCollection("posts", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("blog/posts/*.md").sort((a, b) => b.date - a.date);
+    return collectionApi.getFilteredByGlob("blog/posts/*.md")
+      .filter(post => !post.data.draft)
+      .sort((a, b) => b.date - a.date);
   });
 
   // Date formatting filter
