@@ -8,6 +8,7 @@ tags:
   - outbound
   - lead-gen
   - strategy
+image: /img/blog/selling-to-funded-startups.png
 draft: true
 ---
 
