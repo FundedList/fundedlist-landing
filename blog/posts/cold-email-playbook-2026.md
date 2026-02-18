@@ -8,6 +8,7 @@ tags:
   - outbound
   - templates
   - deliverability
+image: /img/blog/cold-email-playbook.png
 draft: true
 ---
 
