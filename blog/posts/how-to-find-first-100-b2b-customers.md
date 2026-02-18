@@ -8,6 +8,7 @@ tags:
   - founders
   - outbound
   - strategy
+image: /img/blog/first-100-customers.png
 draft: true
 ---
 
