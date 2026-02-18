@@ -8,6 +8,7 @@ tags:
   - lead-gen
   - comparisons
   - funded-startups
+image: /img/blog/crunchbase-alternatives.png
 draft: true
 ---
 
