@@ -9,7 +9,6 @@ tags:
   - lead-gen
   - strategy
 image: /img/blog/selling-to-funded-startups.png
-draft: true
 ---
 
 Every week, hundreds of startups close funding rounds. Within 30 days, most of them will hire new vendors, buy new tools, and sign new contracts.
