@@ -9,7 +9,6 @@ tags:
   - comparisons
   - funded-startups
 image: /img/blog/crunchbase-alternatives.png
-draft: true
 ---
 
 Crunchbase is the default place people go to find startup and funding data. And for good reason — they have profiles on millions of companies, funding round details, investor information, and a searchable database.
