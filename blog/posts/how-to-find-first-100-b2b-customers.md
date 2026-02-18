@@ -9,7 +9,6 @@ tags:
   - outbound
   - strategy
 image: /img/blog/first-100-customers.png
-draft: true
 ---
 
 You have a product or service. You know it's good. But you have zero customers — or maybe a handful from your network — and you need to get to 100.
