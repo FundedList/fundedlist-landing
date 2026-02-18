@@ -8,6 +8,7 @@ tags:
   - lead-gen
   - outbound
   - tools
+image: /img/blog/ai-sales-prospecting.png
 draft: true
 ---
 
