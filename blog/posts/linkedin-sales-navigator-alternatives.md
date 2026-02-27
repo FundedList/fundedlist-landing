@@ -3,6 +3,7 @@ layout: blog-post.njk
 title: "LinkedIn Sales Navigator Alternatives: The Best Options for B2B Sales Teams [2026]"
 description: "LinkedIn Sales Navigator is powerful but expensive. Here are 7 alternatives with better pricing, features, or specialized capabilities for social selling."
 date: 2026-02-27
+image: /img/blog/linkedin-sales-navigator-alternatives.png
 tags:
   - alternatives
   - lead-gen
