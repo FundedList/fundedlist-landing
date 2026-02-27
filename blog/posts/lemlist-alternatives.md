@@ -3,6 +3,7 @@ layout: blog-post.njk
 title: "Lemlist Alternatives: The Best Options for B2B Sales Teams [2026]"
 description: "Lemlist pioneered personalized cold email but isn't the only option. Here are 7 alternatives with better deliverability, features, or pricing for your outbound campaigns."
 date: 2026-02-27
+image: /img/blog/lemlist-alternatives.png
 tags:
   - alternatives
   - lead-gen
