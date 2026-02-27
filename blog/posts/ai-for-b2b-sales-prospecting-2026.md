@@ -1,14 +1,15 @@
 ---
 layout: blog-post.njk
-title: "How to Use AI for B2B Sales Prospecting in 2026 (What's Real vs Hype)"
-description: "AI can write your emails, research prospects, and prioritize leads. But it can't replace strategy. Here's what actually works."
-date: 2026-02-18
+title: How to Use AI for B2B Sales Prospecting in 2026 (What's Real vs Hype)
+description: AI can write your emails, research prospects, and prioritize leads.
+  But it can't replace strategy. Here's what actually works.
+date: 2026-02-26T22:16:00.000-06:00
+image: /img/blog/ai-sales-prospecting.png
 tags:
   - ai
   - lead-gen
   - outbound
   - tools
-image: /img/blog/ai-sales-prospecting.png
 ---
 
 Every sales tool now has "AI" in the pitch. AI writes your emails. AI finds your leads. AI books your meetings. AI does your laundry.
