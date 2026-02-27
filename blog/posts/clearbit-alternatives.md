@@ -3,6 +3,7 @@ layout: blog-post.njk
 title: "Clearbit Alternatives: The Best Options for B2B Sales Teams [2026]"
 description: "Clearbit was a leader in data enrichment but shut down their main product. Here are 8 alternatives for enriching leads and finding contact information."
 date: 2026-02-27
+image: /img/blog/clearbit-alternatives.png
 tags:
   - alternatives
   - lead-gen
