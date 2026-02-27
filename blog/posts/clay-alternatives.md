@@ -3,6 +3,7 @@ layout: blog-post.njk
 title: "Clay Alternatives: The Best Options for B2B Sales Teams [2026]"
 description: "Clay is powerful for data enrichment but complex. Here are 7 alternatives with simpler workflows, better pricing, or specialized features for your data needs."
 date: 2026-02-27
+image: /img/blog/clay-alternatives.png
 tags:
   - alternatives
   - lead-gen
