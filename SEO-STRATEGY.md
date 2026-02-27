@@ -1,204 +1,112 @@
----
-eleventyExcludeFromCollections: true
-permalink: false
----
-# FundedList SEO & ASEO Strategy
-*February 2026*
+# FundedList SEO Content Strategy
+
+**Created:** 2026-02-27
+**Keyword Research:** `keyword-research-b2b-sales.md` (150 keywords, all 100+/mo)
+**Blog CMS:** Decap CMS on fundedlist.com
 
 ---
 
-## The Big Picture
-
-**Don't compete with Apollo/ZoomInfo on broad "B2B lead gen" keywords.** You'll lose. Instead, **own the "sell to funded startups" niche** — a keyword cluster that already has proven search demand but no dominant player combining data + outreach expertise + done-for-you delivery.
-
-Your real content competitors are GrowthList.co, Fundraise Insider, and Revli — not the big platforms. And they're beatable because they're just data providers. You bring practitioner credibility.
-
----
-
-## Format: Long Guides vs Short Pages?
-
-**Answer: Both, but structured.**
-
-- **3-5 pillar pages** (3,000+ words) — comprehensive guides on core topics
-- **8-12 cluster articles per pillar** (1,000-1,500 words) — supporting long-tail topics
-- **5-10 comparison posts** — "[Tool] alternatives" and "[X] vs [Y]" (these are 32.5% of all AI citations)
-- **Weekly funding roundups** (300-500 words) — compounding SEO + freshness signal
-- **Total: ~50-80 quality pages, not 500 thin ones**
-
-For AI/LLM discovery specifically: use question-format H2 headers, answer directly in the first 40-60 words, then expand. Each section should stand alone as a citable chunk.
+## Phase 1: Pillar Posts ✅ DONE
+5 pillar posts published as Decap CMS drafts (PRs #3-#7):
+1. Signal-Based Prospecting
+2. Cold Email That Actually Works
+3. Tool Alternatives & Comparisons
+4. Build Your Outbound Machine
+5. AI for Sales (Practical, Not Hype)
 
 ---
 
-## The 5 Content Pillars
+## Phase 2: Quick Wins (Target: March 2026)
 
-### Pillar 1: "Selling to Funded Startups" (Category Creation)
-*Nobody owns this topic. You should.*
+### 2a. Tool Alternatives Posts
+Highest intent, fastest to rank. People searching these are actively shopping.
 
-**Pillar page:** "The Complete Guide to Selling to Recently Funded Startups"
-**Clusters:**
-- Why Funded Startups Buy in the First 90 Days
-- Seed vs Series A vs Series B: What Each Stage Actually Needs
-- The 30-Day Window: Why Outreach Timing Beats Copy
-- Cold Email Templates for Post-Funding Outreach
-- How to Reference a Funding Round Without Being Cringe
-- What Startups Buy After Raising (By Funding Stage)
-- Selling Marketing Services to Series A Companies
-- How Recruiting Agencies Should Target Funded Startups
-- Selling Dev Tools to Funded Startups
-- The Funded Startup Sales Playbook for Agency Owners
+Priority order (by commercial intent / bid range):
+1. ZoomInfo alternatives ($21-78 bids)
+2. Apollo.io alternatives (High competition = high value)
+3. Rocketreach alternatives (High competition)
+4. Lemlist alternatives (High competition)
+5. Clearbit alternatives ($10-45 bids)
+6. LinkedIn Sales Navigator alternatives
+7. Crunchbase alternatives
+8. Hunter.io alternatives
+9. Lusha alternatives
+10. Clay alternatives
 
-### Pillar 2: "B2B Lead Generation for Founders"
-*Targeting bootstrappers, solopreneurs, side-hustle-to-business crowd*
+**Format:** "X Alternatives: [Year] Guide" - what the tool does, what sucks, how FundedList is different. Each ~1,500-2,500 words. Include comparison table.
 
-**Pillar page:** "How to Find Your First 100 B2B Customers"
-**Clusters:**
-- How to Build a Prospect List From Scratch
-- Finding Customers Without Paid Ads
-- How to Define Your Ideal Customer Profile (ICP)
-- Where to Find B2B Leads Besides LinkedIn
-- Lead Generation on a Bootstrap Budget
-- Founder-Led Sales: How to Sell Before You Hire a Sales Team
-- How to Turn a Side Hustle Into a Real Pipeline
-- Outbound Sales Playbook for Solopreneurs
-- How to Get Clients for Your Agency (Without Referrals)
-- Building Recurring Revenue as a One-Person Business
-
-### Pillar 3: "Cold Email & Outbound Prospecting"
-*Tactical, template-heavy, high search volume*
-
-**Pillar page:** "The Cold Email Playbook: Everything That Works in 2026"
-**Clusters:**
-- Does Cold Email Still Work? (2026 Data)
-- Cold Email vs LinkedIn Outreach: What Works Better
-- How to Set Up Email Infrastructure for Cold Outreach
-- How Many Cold Emails Should You Send Per Day?
-- Cold Email Subject Lines That Get Replies (50+ Examples)
-- How to Personalize Cold Emails at Scale with AI
-- Cold Email Deliverability: SPF, DKIM, DMARC Explained
-- Cold Email Follow-Up Sequences That Convert
-- Cold Email Reply Rate Benchmarks (2026)
-- How to Avoid the Spam Folder
-
-### Pillar 4: "AI for Sales & Lead Generation"
-*Riding the wave, establishing authority*
-
-**Pillar page:** "How to Use AI for B2B Sales Prospecting in 2026"
-**Clusters:**
-- Can AI Replace SDRs? (Honest Assessment)
-- Using ChatGPT/Claude to Write Sales Emails
-- Best AI Lead Generation Tools Compared
-- AI vs Human SDR: Performance Data
-- AI Sales Automation: What's Real vs Hype
-- How to Use AI to Research Prospects
-- AI Email Sequence Generators Worth Using
-- The AI-Powered Outbound Stack (Tools + Workflow)
-
-### Pillar 5: "Tool Comparisons & Alternatives"
-*Highest-converting content in B2B SaaS SEO*
-
-**Individual pages (not clustered):**
-- Crunchbase Alternatives for Sales Teams (2026)
-- PitchBook Alternatives That Don't Cost $20K/Year
-- Apollo.io Alternatives (Cheaper + Better Data)
-- ZoomInfo Alternatives for Small Business
-- Clay Alternatives for Lead Enrichment
-- FundedList vs Crunchbase vs Apollo: Which Is Best for Funded Startup Data?
-- Instantly vs Smartlead vs Lemlist: Head-to-Head
-- Best B2B Prospecting Tools Under $100/Month
-- LinkedIn Sales Navigator Alternatives
-- Best Startup Databases With Contact Info
+### 2b. Cold Email Nurture Sequence
+Write the 6-8 email sequence for free 100 leads signups (Google Tasks item, overdue since Sep 2025). Each email links back to blog content. Conversion + SEO in one.
 
 ---
 
-## Weekly Recurring Content (SEO Compounding)
+## Phase 3: Volume Play (Target: April-May 2026)
 
-**"This Week in Startup Funding"** — Short post every Monday:
-- How many companies raised this week
-- Biggest rounds
-- Hot sectors
-- Quick stats from your actual data
+### 3a. Cold Email Guides
+21 keywords in cluster. Write 3-4 definitive guides targeting:
+- cold email templates (1K-10K)
+- cold email subject lines (1K-10K)
+- how to cold email (100-1K)
+- cold email examples (100-1K)
+- cold email campaign (100-1K, High competition, $11-44 bids)
 
-This builds:
-- Compounding long-tail SEO (each post targets "[month] [year] startup funding")
-- Freshness signals for Google and LLMs
-- Email list growth (people subscribe for the free roundup, upsell to full CSV)
-- Authority — you become THE source for funded startup data
-
----
-
-## ASEO (AI Search Optimization) Specifics
-
-1. **Add `llms.txt`** to site root — emerging standard for AI crawler guidance
-2. **Submit to Bing Webmaster Tools** — ChatGPT uses Bing for search
-3. **FAQ schema on every pillar page** — highest AI extraction rate
-4. **"Last Updated" dates visible** on all content — recency is a strong AI signal
-5. **Get active on Reddit** — r/sales, r/coldemail, r/SaaS, r/Entrepreneur (Perplexity gets 46.7% of citations from Reddit)
-6. **Build multi-platform presence** — LinkedIn articles, YouTube, podcast appearances (4+ platforms = 2.8x more AI citations)
-7. **Include original data** — your own client stats, response rates, benchmarks (+22% citation boost)
+### 3b. B2B Lead Gen Guides
+54 keywords, massive cluster. Priority targets:
+- b2b lead generation (1K-10K)
+- lead generation services (1K-10K)
+- b2b lead gen companies (1K-10K)
+- outsourced lead generation (100-1K, $21-77 bids)
+- ai lead generation tools (100-1K)
+- best b2b lead generation companies (100-1K)
 
 ---
 
-## 150 Keywords (Prioritized)
+## Phase 4: Moat Content (Ongoing)
 
-### Tier 1: Start Here (Easy, High Intent, Direct Product Fit)
-1. recently funded startups list
-2. how to find companies that just raised funding
-3. funded startup database
-4. free list of funded startups
-5. weekly funded startup alerts
-6. startup database with funding rounds and contacts
-7. selling to companies after they raise money
-8. best time to sell to a startup after funding
-9. Crunchbase alternatives for sales teams
-10. PitchBook alternatives cheaper
-11. best Crunchbase alternative for startup data
-12. cold email template for selling to startups
-13. how to find startup founder email addresses
-14. email list of funded startups with decision maker contacts
-15. companies that raised Series A 2026
+### Signal-Based Prospecting
+FundedList's unique angle. Nobody else writes about this.
+- What signal-based selling is and why it beats spray-and-pray
+- Funding signals, hiring signals, tech stack signals
+- How to build a signal-based pipeline from scratch
+- Case studies from FundedList clients
 
-### Tier 2: Quick Wins (Easy, Good Volume)
-16-30: Tool alternatives (Apollo, ZoomInfo, Clay, Instantly, etc.)
-31-45: Cold email tactical (templates, subject lines, deliverability, benchmarks)
-46-60: Founder/solopreneur (first customers, scaling, side hustle → business)
-
-### Tier 3: Authority Building (Medium Difficulty, High Volume)
-61-90: Broad lead gen, AI for sales, B2B data providers
-91-120: Industry-specific guides, comparison content
-121-150: Long-tail and emerging keywords
-
-*Full 150-keyword list with intent and difficulty: `keyword-research-b2b-sales.md`*
+This is the content that's hard to replicate and builds long-term authority.
 
 ---
 
-## 90-Day Action Plan
+## Publishing Cadence — Drip, Don't Dump
 
-### Month 1: Foundation
-- [ ] Add `llms.txt`, Bing Webmaster Tools, IndexNow
-- [ ] Add FAQ schema + "Last Updated" dates to existing pages
-- [ ] Publish Pillar 1: "Complete Guide to Selling to Funded Startups" (category creation)
-- [ ] Publish 3 Tier 1 comparison pages (Crunchbase alt, PitchBook alt, FundedList vs Crunchbase vs Apollo)
-- [ ] Start weekly "This Week in Startup Funding" posts
-- [ ] Seed 2-3 Reddit threads in r/sales and r/coldemail
+**Why drip:**
+- Google rewards consistent publishing. A site posting 2-3x/week looks alive vs. a bulk dump that goes quiet.
+- Each post gets its own crawl/index cycle.
+- You can check Search Console after each post and adjust the next one based on what's getting impressions.
+- Each post = a tweet, LinkedIn post, email touchpoint. 10 posts = 10 reasons to show up in feeds over 3-4 weeks.
+- Internal linking builds naturally: post 2 links to post 1, post 3 links to both.
 
-### Month 2: Tactical Content
-- [ ] Publish Pillar 3: "Cold Email Playbook"
-- [ ] Publish 5 cluster articles (templates, deliverability, benchmarks)
-- [ ] Publish 3 more tool alternative pages
-- [ ] Start LinkedIn content (repurpose blog posts)
-- [ ] Continue weekly funding roundups
+**Exception:** Seed 3 posts on day one so the /alternatives/ section doesn't look empty, then drip the rest.
 
-### Month 3: Scale & Original Data
-- [ ] Publish Pillar 2: "How to Find Your First 100 B2B Customers"
-- [ ] Publish original research: "What Response Rates Look Like When You Email Funded Founders" (from your actual subscriber data)
-- [ ] Publish 5 industry-specific guides
-- [ ] Guest post on 2-3 sales/startup publications
-- [ ] Monitor AI citations (search your topics on ChatGPT, Perplexity, Google AI)
+### Phase 2 Schedule (Alternatives Posts)
+- **Day 1:** Publish 3 posts (ZoomInfo, Apollo, Rocketreach)
+- **Then:** 1 post every 2-3 days
+- **All 10 done in ~3-4 weeks**
+- Each publish = social post on X + LinkedIn
 
----
+### Phase 3 Schedule (Guides)
+- 1-2 posts/week (deeper content, takes more research)
 
-## The Unique Angle Nobody Else Has
+### Phase 4 Schedule (Moat Content)
+- 1 post/week (thought leadership, quality over quantity)
 
-**Practitioner + Data Provider + Done-For-You.** Apollo teaches you to fish in an ocean. FundedList hands you the fish that jumped into the boat this morning.
+## Publishing Process
+1. Sub-agent writes + humanizes all posts upfront
+2. Uploaded as Decap CMS draft PRs (branch per post)
+3. D reviews in CMS or GitHub PRs
+4. Merge PRs on schedule (manually or via cron automation)
+5. Netlify auto-deploys on merge
+6. Post to X + LinkedIn on publish day
 
-Every piece of content should reinforce: **precision + timing > volume.**
+## Tracking
+- Google Search Console for rankings
+- Track keyword positions monthly
+- Internal links: every new post links back to relevant pillar post
+- After first week: check which alternatives post gets most impressions, double down on that angle
