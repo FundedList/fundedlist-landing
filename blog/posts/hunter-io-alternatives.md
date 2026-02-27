@@ -3,6 +3,7 @@ layout: blog-post.njk
 title: "Hunter.io Alternatives: The Best Options for B2B Sales Teams [2026]"
 description: "Hunter.io is great for email finding but has limitations. Here are 7 alternatives with better features, pricing, or comprehensive data for your prospecting needs."
 date: 2026-02-27
+image: /img/blog/hunter-io-alternatives.png
 tags:
   - alternatives
   - lead-gen
