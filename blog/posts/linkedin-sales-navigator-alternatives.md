@@ -8,7 +8,7 @@ tags:
   - alternatives
   - lead-gen
   - tools
-draft: true
+draft: false
 ---
 
 LinkedIn Sales Navigator became the standard for B2B social selling. Advanced search filters, InMail messaging, lead tracking. It helped millions of sales reps find and connect with prospects.
