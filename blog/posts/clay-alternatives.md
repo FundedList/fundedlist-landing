@@ -8,7 +8,7 @@ tags:
   - alternatives
   - lead-gen
   - tools
-draft: true
+draft: false
 ---
 
 Clay revolutionized B2B data enrichment. 75+ data sources, waterfall workflows, high accuracy rates. It's become the gold standard for RevOps teams who obsess over data quality.
