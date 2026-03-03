@@ -8,7 +8,7 @@ tags:
   - alternatives
   - lead-gen
   - tools
-draft: true
+draft: false
 ---
 
 RocketReach has built a solid rep as a contact finder. 700 million professional profiles, decent accuracy for emails and phone numbers. It gets the job done for finding decision-makers.

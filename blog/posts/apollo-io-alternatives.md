@@ -8,7 +8,7 @@ tags:
   - alternatives
   - lead-gen
   - tools
-draft: true
+draft: false
 ---
 
 Apollo.io has won over a lot of B2B sales teams. 275+ million contacts, built-in email sequences, decent free plan. It puts contact data and outreach tools in one place.

@@ -8,7 +8,7 @@ tags:
   - alternatives
   - lead-gen
   - tools
-draft: true
+draft: false
 ---
 
 ZoomInfo owns the B2B contact database space. 300 million contacts, solid search filters, and pretty much every enterprise sales team uses it.
