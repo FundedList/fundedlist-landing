@@ -8,7 +8,7 @@ tags:
   - alternatives
   - lead-gen
   - tools
-draft: true
+draft: false
 ---
 
 Lusha earned its rep as a reliable, simple contact finder. Browser extension, clean interface, finds emails and phone numbers without fuss. Sales reps love its no-nonsense approach.
