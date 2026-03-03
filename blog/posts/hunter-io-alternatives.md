@@ -8,7 +8,7 @@ tags:
   - alternatives
   - lead-gen
   - tools
-draft: true
+draft: false
 ---
 
 Hunter.io built its rep as the go-to email finder. Domain search, email verification, simple API. It became popular because it just works for finding contact info.
