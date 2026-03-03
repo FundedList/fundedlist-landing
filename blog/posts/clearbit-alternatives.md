@@ -8,7 +8,7 @@ tags:
   - alternatives
   - lead-gen
   - tools
-draft: true
+draft: false
 ---
 
 Clearbit was the king of B2B data enrichment. Fill in missing lead info automatically. API-first approach that made integration easy.
