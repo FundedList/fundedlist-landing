@@ -8,7 +8,7 @@ tags:
   - alternatives
   - lead-gen
   - tools
-draft: true
+draft: false
 ---
 
 Lemlist was first to nail personalized cold email. Custom images, videos, dynamic text. It changed how sales teams think about outbound.
