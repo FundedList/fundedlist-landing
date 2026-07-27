@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <title>FundedList — An Agent That Runs Your Prospecting</title>
+  <meta name="description" content="Your ICP is already defined. I build an agent that runs the prospecting motion end to end — targeting, research, qualification, personalization, follow-up, and pipeline intelligence — on a database of 105,533 funded founders.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0a0a0a;
+      --surface: #141414;
+      --surface-2: #1a1a1a;
+      --border: #2a2a2a;
+      --text: #f5f5f5;
+      --text-muted: #888;
+      --accent: #4f46e5;
+      --accent-light: #6366f1;
+      --accent-glow: rgba(99, 102, 241, 0.15);
+      --green: #22c55e;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+        /* NAV */
+    nav {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      text-decoration: none;
+      color: var(--text);
+    }
+    .logo span { color: var(--accent-light); }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      transition: color .2s;
+      white-space: nowrap;
+    }
+    .nav-link:hover { color: var(--text); }
+    .nav-cta {
+      background: var(--accent);
+      color: white;
+      padding: 10px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--accent-light); }
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      color: var(--text);
+    }
+    .hamburger svg { display: block; }
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      z-index: 100;
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a {
+      display: block;
+      padding: 12px 0;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border-bottom: 1px solid var(--border);
+      transition: color .2s;
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: var(--text); }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+    }
+
+    /* HERO */
+    .hero {
+      padding: 100px 0 80px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--accent-glow);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      color: var(--accent-light);
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 24px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--accent-light), #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: white;
+      padding: 16px 36px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      transition: all 0.2s;
+      box-shadow: 0 0 40px rgba(99, 102, 241, 0.25);
+    }
+    .hero-cta:hover {
+      background: var(--accent-light);
+      transform: translateY(-1px);
+      box-shadow: 0 0 60px rgba(99, 102, 241, 0.35);
+    }
+    .hero-cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--text);
+      padding: 16px 36px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+    .hero-cta-secondary:hover {
+      border-color: var(--accent-light);
+      background: var(--accent-glow);
+    }
+
+    /* STATS BAR */
+    .stats-bar {
+      padding: 48px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--accent-light);
+      letter-spacing: -1px;
+    }
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 500;
+    }
+    @media (max-width: 600px) {
+      .stats-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    /* PROBLEM SECTION */
+    .problem {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .problem h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-align: center;
+      letter-spacing: -0.5px;
+    }
+    .problem > .container > p {
+      text-align: center;
+      color: var(--text-muted);
+      max-width: 640px;
+      margin: 0 auto 20px;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+    .problem-highlight {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      max-width: 640px;
+      margin: 32px auto 0;
+    }
+    .problem-highlight p {
+      color: #bbb;
+      font-size: 0.95rem;
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+    .problem-highlight p:last-child { margin-bottom: 0; }
+    .problem-highlight strong {
+      color: var(--text);
+    }
+
+    /* HOW IT WORKS */
+    .how {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .how h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 48px;
+      text-align: center;
+      letter-spacing: -0.5px;
+    }
+    .how > .container > p {
+      text-align: center;
+      color: var(--text-muted);
+      max-width: 640px;
+      margin: 0 auto 48px;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .step {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px 28px;
+      position: relative;
+    }
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--accent-glow);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      color: var(--accent-light);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+    .step h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .step p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* WHAT YOU GET */
+    .deliverable {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .deliverable h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      text-align: center;
+      letter-spacing: -0.5px;
+    }
+    .deliverable > .container > p.subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      max-width: 580px;
+      margin: 0 auto 48px;
+      font-size: 1.05rem;
+    }
+    .deliverable-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 640px) {
+      .deliverable-grid { grid-template-columns: 1fr; }
+    }
+    .deliverable-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .deliverable-card .icon {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+    .deliverable-card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .deliverable-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* WHO IT'S FOR */
+    .audience {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .audience h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      text-align: center;
+      letter-spacing: -0.5px;
+    }
+    .audience > .container > p.subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 48px;
+      font-size: 1.05rem;
+    }
+    .audience-list {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .audience-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .audience-item:last-child { border-bottom: none; }
+    .audience-check {
+      color: var(--green);
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .audience-item h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .audience-item p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* ABOUT */
+    .about {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .about-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .about h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+    .about p {
+      color: #bbb;
+      font-size: 0.95rem;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    .about p:last-child { margin-bottom: 0; }
+    .about strong { color: var(--text); }
+
+    /* PRICING */
+    .pricing {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .pricing h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      text-align: center;
+      letter-spacing: -0.5px;
+    }
+    .pricing > .container > p.subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 48px;
+      font-size: 1.05rem;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .pricing-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 36px 32px;
+    }
+    .pricing-card.featured {
+      border-color: var(--accent);
+      box-shadow: 0 0 40px rgba(99, 102, 241, 0.1);
+    }
+    .pricing-card .plan-name {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-light);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .pricing-card .price {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 4px;
+    }
+    .pricing-card .price span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+    .pricing-card .price-desc {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+    .pricing-card ul {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+    .pricing-card ul li {
+      padding: 8px 0;
+      font-size: 0.92rem;
+      color: #ccc;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .pricing-card ul li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .pricing-card .plan-cta {
+      display: block;
+      text-align: center;
+      padding: 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+    .pricing-card .plan-cta.primary {
+      background: var(--accent);
+      color: white;
+    }
+    .pricing-card .plan-cta.primary:hover {
+      background: var(--accent-light);
+    }
+    .pricing-card .plan-cta.secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .pricing-card .plan-cta.secondary:hover {
+      border-color: var(--accent-light);
+    }
+
+    /* FAQ */
+    .faq {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .faq h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 48px;
+      text-align: center;
+      letter-spacing: -0.5px;
+    }
+    .faq-list {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 24px 0;
+    }
+    .faq-item:first-child { padding-top: 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .faq-a {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* FINAL CTA */
+    .final-cta {
+      padding: 100px 0;
+      text-align: center;
+    }
+    .final-cta .hero-cta { margin-bottom: 16px; }
+    .fine-print {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .final-cta h2 {
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+    .final-cta p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 36px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 32px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 60px 0 50px; }
+      .hero p { font-size: 1.05rem; }
+      .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+      .stat-number { font-size: 1.8rem; }
+      .steps { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+  <!-- Google Tag Manager (async) -->
+  <script>window.dataLayer=window.dataLayer||[];(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MJM83PPB');</script>
+  <!-- End GTM -->
+</head>
+<body>
+  <!-- GTM (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJM83PPB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- NAV -->
+  <nav>
+    <div class="container">
+      <a href="/" class="logo">Funded<span>List</span></a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="/blog/" class="nav-link">Blog</a>
+          <a href="/weekly-report/" class="nav-link">Weekly Report</a>
+          <a href="/insurance-ma/" class="nav-link">M&amp;A Intel</a>
+        </div>
+        <a href="/book" class="nav-cta">Book a Call</a>
+        <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.toggle('open')" aria-label="Menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu">
+      <a href="/blog/">Blog</a>
+      <a href="/weekly-report/">Weekly Report</a>
+      <a href="/insurance-ma/">M&amp;A Intel</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">🤖 Revenue Workflow Agents</div>
+      <h1>You already know who your buyer is. <em>Finding them shouldn't take 20 hours a week.</em></h1>
+      <p>I build an agent that runs the prospecting motion end to end — targeting, research, qualification, personalization, follow-up. You take the conversations.</p>
+      <div class="hero-buttons">
+        <a href="/book" class="hero-cta">Book a Call →</a>
+        <a href="#how" class="hero-cta-secondary">See What It Runs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div>
+          <div class="stat-number">105,533</div>
+          <div class="stat-label">Funded Founders Tracked</div>
+        </div>
+        <div>
+          <div class="stat-number">100+</div>
+          <div class="stat-label">Companies Served</div>
+        </div>
+        <div>
+          <div class="stat-number">Weekly</div>
+          <div class="stat-label">New Funding Signals Since 2022</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="problem">
+    <div class="container">
+      <h2>You're not short on strategy. You're short on hours.</h2>
+      <p>You can describe your ideal customer in one sentence. Turning that sentence into conversations is what eats the week — pulling lists, checking the company is still real, guessing at an email, and writing an opener that sounds like the last forty.</p>
+      <div class="problem-highlight">
+        <p>The usual fix is an agency at <strong>$3–5K/month</strong> exporting from the same database everyone else exports from. You rent the results and own nothing.</p>
+        <p>An agent is the opposite. It runs on your data, in your inbox, against your definition of a good fit — and it's still yours when the engagement ends.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IT RUNS -->
+  <section class="how" id="how">
+    <div class="container">
+      <h2>Six workflows, one agent.</h2>
+      <p>Scoped to your business, wired into your CRM and inbox, run on a weekly cycle. Each stage feeds the next.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Targeting</h3>
+          <p>Your ICP becomes a live account set, refreshed weekly against funding, hiring, and stack-change signals — so you show up when budget appears.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Research</h3>
+          <p>A short dossier per account: what they sell, what changed this month, who owns the problem you solve, and the hook worth opening with.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Qualification</h3>
+          <p>Every account is scored against the pattern in your closed-won deals. The ones that don't fit get dropped before a single touch is spent.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Personalization</h3>
+          <p>Each opener is written off something true and recent about that company, in your voice, at a volume you can't hit by hand.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">5</div>
+          <h3>Follow-up</h3>
+          <p>The sequence runs itself, reads replies, handles the no-thanks and the not-now, and routes anything warm to you with the full thread attached.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">6</div>
+          <h3>Pipeline intelligence</h3>
+          <p>A weekly read on which segments, signals, and angles are producing conversations — and which ones to kill.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE DATA -->
+  <section class="about">
+    <div class="container">
+      <div class="about-inner">
+        <h2>The agent sits on data I own.</h2>
+        <p>FundedList has shipped a verified list of newly funded founders every week since 2022. Every row clears the same bar before it goes out: a business email that passed live verification, a confirmed LinkedIn profile, and a title pulled from a real source instead of guessed.</p>
+        <p>That archive is now <strong>105,533 records deep</strong> and grows every Monday. Most AI outbound tools are a thin layer over the same three data vendors you could buy yourself. This one starts with a proprietary record of who just raised money, when, and how much — the most reliable signal that a company is about to start spending.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="audience">
+    <div class="container">
+      <h2>Who this is for</h2>
+      <p class="subtitle">The agent replaces manual prospecting. It doesn't replace knowing your market.</p>
+      <div class="audience-list">
+        <div class="audience-item">
+          <div class="audience-check">✓</div>
+          <div>
+            <h3>Founders selling into funded startups</h3>
+            <p>You sell to companies right after they raise. Timing is the whole game and you're finding out too late.</p>
+          </div>
+        </div>
+        <div class="audience-item">
+          <div class="audience-check">✓</div>
+          <div>
+            <h3>Agencies and services with a defined ICP</h3>
+            <p>You know exactly who buys from you. You just don't have anyone doing the finding at volume.</p>
+          </div>
+        </div>
+        <div class="audience-item">
+          <div class="audience-check">✓</div>
+          <div>
+            <h3>Teams paying $3–5K/month for lists</h3>
+            <p>You're funding someone else's manual labor applied to public data, and you own none of it.</p>
+          </div>
+        </div>
+        <div class="audience-item">
+          <div class="audience-check">✓</div>
+          <div>
+            <h3>Anyone who's been burned by an AI SDR</h3>
+            <p>Volume isn't the product. The most valuable thing this agent does is decide who <em>not</em> to contact.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>More qualified conversations. Less manual prospecting.</h2>
+      <p>Book 30 minutes. I'll map your ICP against the database live and show you what the agent would surface this week.</p>
+      <a href="/book" class="hero-cta">Book a Call →</a>
+      <p class="fine-print">No commitment. No credit card. Just a conversation.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>© 2026 FundedList. Built in St. Louis. · <a href="/privacy-policy" style="color:#888;text-decoration:none;">Privacy Policy</a> · <a href="/terms-of-service" style="color:#888;text-decoration:none;">Terms of Service</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
